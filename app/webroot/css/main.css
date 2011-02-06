@@ -123,7 +123,7 @@ div#header, div#header div.headerBG {
 }
 
 div#header {
-	background: transparent url(../img/headerBackgroundRepeat.gif) repeat-x 0 0;
+	border-top: 2px solid #1d0c11;
 	overflow: hidden;
 }
 
@@ -157,7 +157,6 @@ div#header a#bookModelButton:hover {
 	background-position: 0 -45px;
 }
 
-
 a.hidespan span {
 	position: absolute;
 	top: -9999em;
@@ -175,9 +174,29 @@ div#mainMenu div#mainMenuItems {
 	background: transparent url(../img/mainMenuBackground.gif) no-repeat 0 0;
 }
 
+div#mainMenu div#mainMenuItems ul li {
+	float: left;
+	height: 71px;
+}
+
+body#pages_display_home div#mainMenuItems ul li#mainMenu_home.farLeft a {
+	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
+}
+
+body#pages_display_home div#mainMenuItems ul li#mainMenu_home {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
 
 
 
+div#mainMenu div#mainMenuItems ul li a {
+	display: block;
+	font: 22px Arial,Verdana,sans-serif;
+	color: #FFF;
+	text-shadow: #000 2px 2px 3px;
+	text-decoration: none;
+	padding: 25px 42px 0;
+}
 
 
 

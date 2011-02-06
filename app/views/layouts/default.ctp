@@ -32,7 +32,7 @@
 			<!-- Begin Header -->
 			<div id="header" class="section">
 				<div class="content headerBG">
-					<?php echo $this->Html->tag('h1', $this->Html->link($this->Html->tag('span', 'Elite Model Companions'), array('controller' => 'pages', 'action' => 'display', 'home'), array('escape' => false, 'class' => 'hidespan')), array('id' => 'eliteLogoHeader')); ?>
+					<?php echo $this->Html->tag('h1', $this->Html->link($this->Html->tag('span', 'Elite Model Companions'), '/', array('escape' => false, 'class' => 'hidespan')), array('id' => 'eliteLogoHeader')); ?>
 					
 					<?php echo $this->Html->link($this->Html->tag('span', 'Book a Model'), array('controller' => 'bookings', 'action' => 'book'), array('escape' => false, 'class' => 'hidespan', 'id' => 'bookModelButton')); ?>
 				</div>
