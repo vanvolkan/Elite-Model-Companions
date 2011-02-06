@@ -56,7 +56,7 @@ html, body {
 }
 
 body {
-	background: #090909 url(../img/emcBackground-dark.jpg) no-repeat center bottom;
+	background-color: #090909;
 	color: #1d1d1d;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 0.625em;
@@ -67,6 +67,7 @@ body {
 }
 
 #wrapper {
+	background: #090909 url(../img/emcBackground-dark.jpg) no-repeat center 100%;
 	height: auto;
 	margin: 0;
 	min-height: 100%;
@@ -106,16 +107,16 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-	color: #53a6b8;
+	color: #7b011d;
 	text-decoration: underline;
 }
 
 a:hover {
-	color: #468795;
+	color: #561020;
 }
 
 a:visited {
-	color: #27373a;
+	color: #4e0818;
 }
 
 div#header, div#header div.headerBG {
@@ -134,7 +135,7 @@ div#header div.headerBG {
 div#header h1#eliteLogoHeader {
 	position: absolute;
 	top: 23px;
-	left: -16px;
+	left: -13px;
 }
 
 div#header h1#eliteLogoHeader a {
@@ -176,18 +177,30 @@ div#mainMenu div#mainMenuItems {
 
 div#mainMenu div#mainMenuItems ul li {
 	float: left;
-	height: 71px;
+	height: 72px;
+	overflow: hidden;
 }
 
-body#pages_display_home div#mainMenuItems ul li#mainMenu_home.farLeft a {
+div#mainMenu div#mainMenuItems ul li, div#mainMenu div#mainMenuItems ul li a, div#mainMenu div#mainMenuItems ul li a span {
+	cursor: pointer; /* IE6 */
+}
+
+div#mainMenu div#mainMenuItems ul li, div#mainMenu div#mainMenuItems ul li a {
+	width: 164px;
+}
+
+body#pages_display_home div#mainMenuItems ul li.farLeft a {
 	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
 }
 
-body#pages_display_home div#mainMenuItems ul li#mainMenu_home {
-	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+body#contacts_index div#mainMenuItems ul li.farRight a {
+	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
 }
 
-
+body#pages_display_home div#mainMenuItems ul li#mainMenu_home, body#models_index div#mainMenuItems ul li#mainMenu_models, body#models_rates div#mainMenuItems ul li#mainMenu_rates,
+body#pages_display_guide div#mainMenuItems ul li#mainMenu_guide, body#employments_index div#mainMenuItems ul li#mainMenu_employment, body#contacts_index div#mainMenuItems ul li#mainMenu_contactUs {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
 
 div#mainMenu div#mainMenuItems ul li a {
 	display: block;
@@ -195,21 +208,46 @@ div#mainMenu div#mainMenuItems ul li a {
 	color: #FFF;
 	text-shadow: #000 2px 2px 3px;
 	text-decoration: none;
-	padding: 25px 42px 0;
+	text-align: center;
+}
+
+div#mainMenu div#mainMenuItems ul li a span {
+	display: block;
+	width: 100%;
+	padding: 25px 0 47px;
+}
+
+div#mainBody div.content {
+	background: #090909 url(../img/contentMainBottomRounded.gif) no-repeat 0 100%;
+	padding: 0 0 16px;
+}
+
+div#mainBody div.roundedBottomMain {
+	background: #ededed url(../img/mainBody_BG-repeat-x.jpg) repeat-x 0 0;
+	
+}
+
+div.padded {
+	padding: 0 20px;
 }
 
 
 
 
 
+div#footer {
+	clear: both;
+	padding: 0 0 16px;
+}
+
+div#footer a {
+	text-decoration: none;
+}
 
 
-
-
-
-
-
-
+div#footer div.webCopyright {
+	float: right;
+}
 
 
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */

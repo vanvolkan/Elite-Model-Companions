@@ -37,7 +37,24 @@
 					<?php echo $this->Html->link($this->Html->tag('span', 'Book a Model'), array('controller' => 'bookings', 'action' => 'book'), array('escape' => false, 'class' => 'hidespan', 'id' => 'bookModelButton')); ?>
 				</div>
 			</div>
+			<!-- Begin Menu -->
 			<?php echo $this->element('mainMenu'); ?>
+			<!-- Begin Body -->
+			<div id="mainBody" class="section">
+				<div class="content">
+					<div class="roundedBottomMain">
+						<div class="padded">
+							<?php echo $this->Session->flash(); ?>
+
+							<?php echo $content_for_layout; ?>
+							
+							<div id="footer">
+								<?php echo $this->element('footer'); ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<?php echo $this->element('sql_dump'); ?>
 	</body>
