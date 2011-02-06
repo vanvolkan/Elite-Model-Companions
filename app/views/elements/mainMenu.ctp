@@ -9,12 +9,12 @@
 				</li>
 				<li id="mainMenu_models">
 					<?php
-						echo $this->Html->link($this->Html->tag('span', 'Models'), array('controller' => 'models', 'action' => 'index'), array('escape' => false));
+						echo $this->Html->link($this->Html->tag('span', 'Models'), array('controller' => 'elite_models', 'action' => 'index'), array('escape' => false));
 					?>
 				</li>
 				<li id="mainMenu_rates">
 					<?php
-						echo $this->Html->link($this->Html->tag('span', 'Rates'), array('controller' => 'models', 'action' => 'rates'), array('escape' => false));
+						echo $this->Html->link($this->Html->tag('span', 'Rates'), array('controller' => 'elite_models', 'action' => 'rates'), array('escape' => false));
 					?>
 				</li>
 				<li id="mainMenu_guide">

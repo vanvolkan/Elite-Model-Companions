@@ -81,6 +81,7 @@ class DATABASE_CONFIG {
 		'password' => '3l1t3m0d3l5',
 		'database' => 'elite_model_companions',
 		'prefix' => '',
+		'port'	=> '/Applications/MAMP/tmp/mysql/mysql.sock'
 	);
 
 	var $test = array(

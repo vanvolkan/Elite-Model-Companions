@@ -238,6 +238,7 @@ div.padded {
 div#footer {
 	clear: both;
 	padding: 0 0 16px;
+	font-size: 0.9em;
 }
 
 div#footer a {
@@ -247,6 +248,7 @@ div#footer a {
 
 div#footer div.webCopyright {
 	float: right;
+	font-size: 0.8em;
 }
 
 

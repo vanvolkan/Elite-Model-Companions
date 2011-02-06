@@ -1,6 +1,6 @@
 <?php
-	class ModelImagesController extends AppController{
-		var $name = 'ModelImages';
-		var $scaffold;
+	class ModelImagesController extends AppController
+	{
+		public $name = 'ModelImages';
+		public $scaffold;
 	}
-?>

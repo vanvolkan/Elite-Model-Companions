@@ -27,7 +27,7 @@
 			<?php echo $this->Html->script('supersleight-min'); ?>
 		<![endif]-->
 	</head>
-	<body id="<?php echo $this->params['controller'] . '_' .$this->params['action'] . '_' . join('_', $this->params['pass']); ?>">
+	<body id="<?php echo $this->params['controller'] . '_' .$this->params['action'] . (count($this->params['pass']) > 1 ? '' : '_') . join('_', $this->params['pass']); ?>">
 		<div id="wrapper">
 			<!-- Begin Header -->
 			<div id="header" class="section">

@@ -3,11 +3,17 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 06, 2011 at 07:06 PM
+-- Generation Time: Feb 06, 2011 at 08:55 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.2
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `elite_model_companions`
@@ -19,7 +25,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Table structure for table `cake_sessions`
 --
 
-CREATE TABLE `cake_sessions` (
+DROP TABLE IF EXISTS `cake_sessions`;
+CREATE TABLE IF NOT EXISTS `cake_sessions` (
   `id` varchar(255) NOT NULL DEFAULT '',
   `data` text,
   `expires` int(11) DEFAULT NULL,
@@ -30,7 +37,7 @@ CREATE TABLE `cake_sessions` (
 -- Dumping data for table `cake_sessions`
 --
 
-INSERT INTO `cake_sessions` VALUES('603c0233846832cd7f963c6e3358a4df', 'Config|a:3:{s:9:"userAgent";s:32:"7ce9046ee6cd02f9abc579f2078951f3";s:4:"time";i:1296991224;s:7:"timeout";i:10;}', 1296991224);
+INSERT INTO `cake_sessions` VALUES('818c4a09888ffe864bd31c1146392600', 'Config|a:3:{s:9:"userAgent";s:32:"db555b90bc304cf457385dd76be7161c";s:4:"time";i:1296994603;s:7:"timeout";i:10;}', 1296994605);
 
 -- --------------------------------------------------------
 
@@ -38,7 +45,8 @@ INSERT INTO `cake_sessions` VALUES('603c0233846832cd7f963c6e3358a4df', 'Config|a
 -- Table structure for table `elite_models`
 --
 
-CREATE TABLE `elite_models` (
+DROP TABLE IF EXISTS `elite_models`;
+CREATE TABLE IF NOT EXISTS `elite_models` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `age` varchar(3) NOT NULL,
@@ -68,7 +76,8 @@ INSERT INTO `elite_models` VALUES(4, 'Kate: the Sensitive Soul', '19', '5''8"', 
 -- Table structure for table `model_images`
 --
 
-CREATE TABLE `model_images` (
+DROP TABLE IF EXISTS `model_images`;
+CREATE TABLE IF NOT EXISTS `model_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `elite_model_id` int(11) NOT NULL,
   `location` varchar(255) NOT NULL,
@@ -87,7 +96,8 @@ CREATE TABLE `model_images` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(40) DEFAULT NULL,
@@ -101,5 +111,5 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
+INSERT INTO `users` VALUES(1, 'slav', '6367c48dd193d56ea7b0baad25b19455e529f5ee', '0000-00-00 00:00:00', '2011-01-25 22:58:16', NULL);
 INSERT INTO `users` VALUES(2, 'volkan', '6367c48dd193d56ea7b0baad25b19455e529f5ee', '2011-01-25 21:31:56', '2011-01-25 21:31:17', '2011-01-25 21:31:56');
-INSERT INTO `users` VALUES(4, 'slav', '6367c48dd193d56ea7b0baad25b19455e529f5ee', '0000-00-00 00:00:00', '2011-01-25 22:58:16', NULL);
