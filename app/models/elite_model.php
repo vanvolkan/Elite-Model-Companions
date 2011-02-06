@@ -1,5 +1,5 @@
 <?php
-  class EliteModel extends Appmodel
+  class EliteModel extends AppModel
   {
     var $name = 'EliteModel';	
 	
