@@ -1,5 +1,7 @@
 <?php
   class EliteModelsController extends AppController {
+	
+	var $name = 'EliteModels';
 
 	function index() {		
 	  $this->set('elite_models', $this->EliteModel->find('all'));	
