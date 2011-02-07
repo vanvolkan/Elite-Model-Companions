@@ -13,10 +13,11 @@
 		            //send email using the Email component
 		            $this->Email->to = Configure::read('eliteModelsOwner');
 					$this->Email->bcc = Configure::read('eliteModelsAdmins');
-		            $this->Email->subject = 'Contact message from ' . $this->data['Contact']['name'];  
+		            $this->Email->subject = 'Contact message from ' . $this->data['Contact']['full_name'];  
 		            $this->Email->from = $this->data['Contact']['email'];
 					$this->Email->delivery = 'debug';
-		            $this->Email->send($this->data['Contact']['details']);
+		            $this->Email->send($this->data['Contact']['enquiry']);
+					$this->Contact->save();
 		        }
 		    }
 		}
