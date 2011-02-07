@@ -85,7 +85,7 @@
  *
  * [Note Routing.admin is deprecated in 1.3.  Use Routing.prefixes instead]
  */
-	Configure::write('Routing.prefixes', array('www.elitemodelcompanions.com.au/admin/models'));
+	Configure::write('Routing.prefixes', array('admin'));
 
 /**
  * Turn off all caching application-wide.
@@ -301,4 +301,13 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
- 
+	
+	// Custom configuration
+	Configure::write('eliteModelsAdmins', array(
+		'slavlazar@gmail.com',
+		'volkanvan@gmail.com'
+	));
+	
+	Configure::write('eliteModelsOwner', array(
+		'kitty_kat18@hotmail.com'
+	));

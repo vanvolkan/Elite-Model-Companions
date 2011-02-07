@@ -4,7 +4,7 @@
 			<ul>
 				<li id="mainMenu_home" class="farLeft">
 					<?php
-						echo $this->Html->link($this->Html->tag('span', 'Home'), '/', array('escape' => false));
+						echo $this->Html->link($this->Html->tag('span', 'Home'), array('controller' => 'pages', 'action' => 'display', 'home'), array('escape' => false));
 					?>
 				</li>
 				<li id="mainMenu_models">

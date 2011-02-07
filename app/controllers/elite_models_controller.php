@@ -13,7 +13,6 @@ class EliteModelsController extends AppController {
 	}
 
 	function admin_index() {
-		$this->EliteModel->recursive = 0;
 		$this->set('eliteModels', $this->paginate());
 	}
 
