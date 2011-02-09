@@ -87,23 +87,32 @@ body {
 	width: 984px;
 }
 
-p { font-size: 1.4em; }
+p { font-size: 1.2em; }
 
-h1 { font-size: 4.8em; }
+h1 { font-size: 26px; }
 
-h2 { font-size: 3.6em; }
+h2 { font-size: 20px; }
 
-h3 { font-size: 2.4em; }
+h3 { font-size: 18px; }
 
-h4 { font-size: 2.1em; }
+h4 { font-size: 17px; }
 
-h5 { font-size: 1.8em; }
+h5 { font-size: 16px }
 
-h6 { font-size: 1.6em; }
+h6 { font-size: 15px }
 
 h1, h2, h3, h4, h5 {
 	font-family: Palatino, Palatino Linotype, Hoefler Text, Times, Times New Roman, serif;
 	line-height: 1em;
+}
+
+/* Headings */
+h1.hReplaced_red {
+	padding-bottom: 5px;
+}
+
+p {
+	padding: 8px 0;
 }
 
 a {
@@ -217,6 +226,10 @@ div#mainMenu div#mainMenuItems ul li a span {
 	padding: 25px 0 47px;
 }
 
+div#mainBody {
+	padding-bottom: 80px; /* Push the background image lower */
+}
+
 div#mainBody div.content {
 	background: #090909 url(../img/contentMainBottomRounded.gif) no-repeat 0 100%;
 	padding: 0 0 16px;
@@ -231,8 +244,26 @@ div.padded {
 	padding: 0 20px;
 }
 
+div#home_page {
+	padding-top: 20px;
+}
 
+div.two_col_layout {
+	width: 944px;
+	overflow: hidden;
+	clear: both;
+}
 
+div.two_col_layout .col1 {
+	width: 586px;
+	margin-right: 20px;
+	float: left;
+}
+
+div.two_col_layout .col2 {
+	width: 338px;
+	float: right;
+}
 
 
 div#footer {
@@ -249,6 +280,30 @@ div#footer a {
 div#footer div.webCopyright {
 	float: right;
 	font-size: 0.8em;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+.strtoupper {
+	text-transform: uppercase;
+}
+
+.strtolower {
+	text-transform: lowercase;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.clear {
+	clear: both;
 }
 
 

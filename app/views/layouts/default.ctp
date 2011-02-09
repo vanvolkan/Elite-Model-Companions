@@ -27,7 +27,7 @@
 			<?php echo $this->Html->script('supersleight-min'); ?>
 		<![endif]-->
 	</head>
-	<body id="<?php echo $this->params['controller'] . '_' .$this->params['action'] . (count($this->params['pass']) > 1 ? '' : '_') . join('_', $this->params['pass']); ?>">
+	<body id="<?php echo $this->params['controller'] . '_' .$this->params['action'] . (count($this->params['pass']) > 1 ? '' : '_') . join('_', $this->params['pass']); ?>" class="<?php echo $this->params['controller'] . '_' .$this->params['action']; ?>">
 		<div id="wrapper">
 			<!-- Begin Header -->
 			<div id="header" class="section">
@@ -38,7 +38,13 @@
 				</div>
 			</div>
 			<!-- Begin Menu -->
-			<?php echo $this->element('mainMenu'); ?>
+			<?php echo $this->element('mainMenu', array('cache' => '+7 days')); ?>
+			<?php
+				// Display banners for homepage only (when currentRoute returns '/' we're at the homepage)
+				if (Router::currentRoute()->template == '/') {
+					echo $this->element('homePageBanners', array('cache' => '+7 days'));
+				}
+			?>
 			<!-- Begin Body -->
 			<div id="mainBody" class="section">
 				<div class="content">
