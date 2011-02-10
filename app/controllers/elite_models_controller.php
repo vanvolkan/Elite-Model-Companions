@@ -3,8 +3,24 @@ class EliteModelsController extends AppController {
 
 	var $name = 'EliteModels';
 	
-	function index() {		
-		$this->set('elite_models', $this->EliteModel->find('all'));	
+	function index() {
+		if (isset($this->params['requested'])) {
+			if (!$featuredModel = $this->EliteModel->find('first', array(
+				'order'			=> 'RAND()',
+				'conditions'	=> array('EliteModel.is_featured' => 1),
+				'contain'		=> array('ModelImage.location'),
+				'fields'		=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description')
+			))) {
+				$featuredModel = $this->EliteModel->find('first', array(
+					'order'		=> 'RAND()',
+					'contain'		=> array('ModelImage.location'),
+					'fields'		=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description')
+				));
+			};
+			
+			return $featuredModel;
+		} else
+			$this->set('elite_models', $this->EliteModel->find('all'));	
 	}
 	 
 	function view($id = null) {        

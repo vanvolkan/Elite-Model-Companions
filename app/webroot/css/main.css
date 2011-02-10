@@ -99,9 +99,9 @@ h4 { font-size: 17px; }
 
 h5 { font-size: 16px }
 
-h6 { font-size: 15px }
+h6 { font-size: 14px }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: Palatino, Palatino Linotype, Hoefler Text, Times, Times New Roman, serif;
 	line-height: 1em;
 }
@@ -265,6 +265,44 @@ div.two_col_layout .col2 {
 	float: right;
 }
 
+div.frontFeaturedModelContainer {
+	overflow: hidden;
+}
+
+div.frontFeaturedModelContainer div.modelImageContainer {
+	background-color: #000;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	margin-bottom: 15px;
+	clear: both;
+	height: 321px;
+	width: 328px;
+	padding: 5px;
+}
+
+div.frontFeaturedModelContainer div.modelImageContainer div {
+	width: 321px;
+	height: 316px;
+	overflow: hidden;
+	margin: 3px auto 0;
+	text-align: center;
+}
+
+div.frontFeaturedModelContainer span.faceBookLike {
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: right;
+}
+
+div.frontFeaturedModelContainer p {
+	color: #494848;
+}
+
+div.frontFeaturedModelContainer h6 {
+	width: 165px;
+	white-space: pre-wrap;
+}
 
 div#footer {
 	clear: both;
@@ -276,10 +314,28 @@ div#footer a {
 	text-decoration: none;
 }
 
-
 div#footer div.webCopyright {
 	float: right;
 	font-size: 0.8em;
+}
+
+div#footer div.footerLinks {
+	padding-top: 8px;
+}
+
+div#footer div.footerLinks a {
+	text-transform: uppercase;
+	color: #7b011d;
+	font-weight: bold;
+}
+
+div#footer div.footerLinks ul li {
+	float: left;
+	padding-right: 6px;
+}
+
+div#footer div.footerLinks ul li span {
+	padding-right: 5px;
 }
 
 .text-align-right {
@@ -304,6 +360,10 @@ div#footer div.webCopyright {
 
 .clear {
 	clear: both;
+}
+
+.redText {
+	color: #7b011d;
 }
 
 

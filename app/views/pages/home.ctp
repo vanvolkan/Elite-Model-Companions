@@ -20,7 +20,7 @@
 		</div>
 		<div class="col2">
 			<?php
-				echo $this->element('featuredModel');
+				echo $this->element('featuredModel', array('cache' => '+5 hours'));
 			?>
 		</div>
 	</div>

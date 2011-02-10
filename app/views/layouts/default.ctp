@@ -56,7 +56,7 @@
 							<?php echo $content_for_layout; ?>
 							
 							<div id="footer">
-								<?php echo $this->element('footer'); ?>
+								<?php echo $this->element('footer', array('cache' => '+7 days')); ?>
 							</div>
 						</div>
 					</div>

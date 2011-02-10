@@ -10,6 +10,8 @@
 					'limit'		=> $limit,
 					'order'		=> array('Banner.created', 'Banner.modified')
 				));
+			} else {
+				$this->redirect($this->referer());
 			}
 		}
 	}
