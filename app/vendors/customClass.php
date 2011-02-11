@@ -17,7 +17,7 @@
 				),
 				'rates'	=> array(
 					'text'		=> 'Rates',
-					'route'		=> array('controller' => 'elite_models', 'action' => 'rates'),
+					'route'		=> array('controller' => 'pages', 'action' => 'display', 'rates'),
 					'attr'		=> 'Rates'
 				),
 				'guide'	=> array(
@@ -25,9 +25,9 @@
 					'route'		=> array('controller' => 'pages', 'action' => 'display', 'guide'),
 					'attr'		=> 'Guide'
 				),
-				'employment'	=> array(
+				'employments'	=> array(
 					'text'		=> 'Employment',
-					'route'	=> array('controller' => 'employments', 'action' => 'index'),
+					'route'		=> array('controller' => 'employments', 'action' => 'index'),
 					'attr'		=> 'Employment with Elite Model Companions'
 				),
 				'contacts'	=> array(

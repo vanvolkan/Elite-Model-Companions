@@ -198,16 +198,15 @@ div#mainMenu div#mainMenuItems ul li, div#mainMenu div#mainMenuItems ul li a {
 	width: 164px;
 }
 
-body#pages_display_home div#mainMenuItems ul li.farLeft a {
+div#mainMenuItems ul li.selected.farLeft a {
 	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
 }
 
-body#contacts_index div#mainMenuItems ul li.farRight a {
+div#mainMenuItems ul li.selected.farRight a {
 	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
 }
 
-body#pages_display_home div#mainMenuItems ul li#mainMenu_home, body#models_index div#mainMenuItems ul li#mainMenu_models, body#models_rates div#mainMenuItems ul li#mainMenu_rates,
-body#pages_display_guide div#mainMenuItems ul li#mainMenu_guide, body#employments_index div#mainMenuItems ul li#mainMenu_employment, body#contacts_index div#mainMenuItems ul li#mainMenu_contactUs {
+div#mainMenuItems ul li.selected {
 	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
 }
 
