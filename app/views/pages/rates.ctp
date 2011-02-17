@@ -1,5 +1,4 @@
-<h1>Rates</h1>
-
+<h1 class="hReplaced_red">Rates</h1>
 <p>The determination of models rates takes into consideration various factors, including natural beauty, fitness, education, erotic technique, life experience, elegance, sophistication, charisma and much more!</p>
 <p>Discounts apply to extended bookings of more than two hours and group bookings.</p>
 

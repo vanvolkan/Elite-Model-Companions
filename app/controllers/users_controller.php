@@ -51,6 +51,8 @@
 				'admin'			=> true
 			);
 			
+			$this->Auth->logoutRedirect = array(Configure::read('Routing.admin') => false, 'controller' => 'users', 'action' => 'logout');
+			
 			$this->Auth->loginError = "The supplied username/password is incorrect. Please try again.";
 			$this->Auth->authError = "This area of the website is for admins only. Please login to proceed.";
 		}

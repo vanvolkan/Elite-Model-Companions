@@ -1,3 +1,4 @@
+<h1 class="hReplaced_red">Guide</h1>
 
 <p class="guide"><b>Before making an enquiry with us...</b></p>
 

@@ -2,6 +2,7 @@
 class EliteModelsController extends AppController {
 
 	var $name = 'EliteModels';
+	var $helpers = array('Phpthumb');
 	
 	function index() {
 		if (isset($this->params['requested'])) {
@@ -13,14 +14,16 @@ class EliteModelsController extends AppController {
 			))) {
 				$featuredModel = $this->EliteModel->find('first', array(
 					'order'		=> 'RAND()',
-					'contain'		=> array('ModelImage.location'),
-					'fields'		=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description')
+					'contain'	=> array('ModelImage.location'),
+					'fields'	=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description')
 				));
 			};
 			
 			return $featuredModel;
 		} else
-			$this->set('elite_models', $this->EliteModel->find('all'));	
+			$this->set('elite_models', $this->EliteModel->find('all', array(
+				'contain'		=> array('ModelImage.location')
+			)));
 	}
 	 
 	function view($id = null) {        

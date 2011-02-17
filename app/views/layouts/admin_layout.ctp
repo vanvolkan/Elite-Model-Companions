@@ -2,7 +2,7 @@
 <html> 
 	<head>
 		<?php echo $this->Html->charset(); ?>
-		<title><?php echo $title_for_layout; ?><?php __(' - Elite Model Companions'); ?></title>
+		<title><?php echo $title_for_layout; ?><?php __(' - ADMIN INTERFACE'); ?></title>
 		<?php
 			echo $this->Html->meta(
 				'description',
@@ -34,17 +34,10 @@
 				<div class="content headerBG">
 					<?php echo $this->Html->tag('h1', $this->Html->link($this->Html->tag('span', 'Elite Model Companions'), '/', array('escape' => false, 'class' => 'hidespan')), array('id' => 'eliteLogoHeader')); ?>
 					
-					<?php echo $this->Html->link($this->Html->tag('span', 'Book a Model'), array('controller' => 'bookings', 'action' => 'book'), array('escape' => false, 'class' => 'hidespan', 'id' => 'bookModelButton')); ?>
 				</div>
 			</div>
-			<!-- Begin Menu -->
-			<?php echo $this->element('mainMenu', array('currentPage' => $this->here)); ?>
-			<?php
-				// Display banners for homepage only (when currentRoute returns '/' we're at the homepage)
-				if (Router::currentRoute()->template == '/') {
-					echo $this->element('homePageBanners', array('cache' => '+7 days'));
-				}
-			?>
+			<!-- Begin Admin Menu -->
+			<?php echo $this->element('mainMenu', array('currentPage' => $this->here, 'admin' => true)); ?>
 			<!-- Begin Body -->
 			<div id="mainBody" class="section">
 				<div class="content">

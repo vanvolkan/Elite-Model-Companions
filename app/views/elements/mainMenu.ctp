@@ -3,7 +3,8 @@
 		<div id="mainMenuItems">
 			<ul>
 				<?php
-					$links = customClass::getSiteMenuItems();
+					$isAdmin = (isset($admin)) ? true : false;
+					$links = customClass::getSiteMenuItems($isAdmin);
 					
 					$found = false;
 					foreach ($links as $key => $link) {

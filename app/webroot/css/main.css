@@ -109,6 +109,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Headings */
 h1.hReplaced_red {
 	padding-bottom: 5px;
+	color: #7b011d;
+}
+
+h1.hReplaced_red a {
+	color: #7b011d;
+	text-decoration: none;
+}
+
+h1#contentHeader {
+	padding: 10px 0;
 }
 
 p {
@@ -243,7 +253,7 @@ div.padded {
 	padding: 0 20px;
 }
 
-div#home_page {
+div#content_page {
 	padding-top: 20px;
 }
 
@@ -301,6 +311,10 @@ div.frontFeaturedModelContainer p {
 div.frontFeaturedModelContainer h6 {
 	width: 165px;
 	white-space: pre-wrap;
+}
+
+div#employmentForm p, div#employmentForm h1, div#employmentForm h2, div#employmentForm h3, div#employmentForm h4, div#employmentForm h5, div#employmentForm div {
+	clear: both;
 }
 
 div#footer {
@@ -363,6 +377,54 @@ div#footer div.footerLinks ul li span {
 
 .redText {
 	color: #7b011d;
+}
+
+p.note {
+	background: #fef3f3 url(../img/note_icon.png) no-repeat 5px 50%;
+	padding: 25px 20px 25px 65px;
+	border: 1px solid #ccc;
+	margin: 5px 0 15px;
+}
+
+div#elite_models_index {
+	margin: 30px 0 10px;
+	clear: both;
+}
+
+ul.elite_models_list li {
+	width: 221px;
+	margin-right: 20px;
+	float: left;
+}
+
+ul.elite_models_list li a, ul.elite_models_list li a img {
+	display: block;
+}
+
+ul.elite_models_list li.farRight {
+	margin-right: 0;
+	clear: right;
+}
+
+div.modelDetailsBox {
+	border: 1px solid #CACACA;
+	padding: 10px;
+	margin: 0;
+	background-color: #e4e3e3;
+}
+
+div.modelDetailsBox a {
+	text-align: center;
+	color: #393939;
+	text-decoration: none;
+	font-size: 1.1em;
+	color: #950224;
+	font-weight: bold;
+}
+
+div.modelDetailsBox a span {
+	display: block;
+	color: #000;
 }
 
 
