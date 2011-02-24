@@ -77,11 +77,11 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'elite_models',
-		'password' => '3l1t3m0d3l5',
-		'database' => 'elite_model_companions',
-		'prefix' => '',
-		'port'	=> '/Applications/MAMP/tmp/mysql/mysql.sock'
+		'login' => 'elitemod_elite_m',
+		'password' => '3l1t3m0d3l52001',
+		'database' => 'elitemod_eliteModelCompanions',
+		'prefix' => ''// ,
+		// 		'port'	=> '/Applications/MAMP/tmp/mysql/mysql.sock'
 	);
 
 	var $test = array(

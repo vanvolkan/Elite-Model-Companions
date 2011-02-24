@@ -10,9 +10,9 @@
 				$src = isset($model['ModelImage'][0]['location']) ? $model['ModelImage'][0]['location'] : '';
 				$thumbnail = $phpthumb->generate(array(
 					'save_path'			=> WWW_ROOT . 'img/models/thumbs',
-					'display_path'		=> WWW_ROOT . 'img/models/thumbs',
-					'error_image_path'	=> WWW_ROOT . 'img/models/error.jpg',
-					'src'				=> WWW_ROOT . 'img' . $src,
+					'display_path'		=> 'models/thumbs',
+					'error_image_path'	=> 'models/error.jpg',
+					'src'				=> 'img' . $src,
 					'w'					=> 221,
 					'h'					=> 300,
 					'q'					=> 100,

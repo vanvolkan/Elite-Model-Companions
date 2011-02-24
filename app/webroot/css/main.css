@@ -427,6 +427,136 @@ div.modelDetailsBox a span {
 	color: #000;
 }
 
+.imageReplaceHeading {
+	text-indent: -9999em;
+	margin: 5px 0;
+}
+
+h2.goldLabelHeading {
+	width: 500px;
+	height: 105px;
+	background: transparent url(../img/headingGoldLabel.gif) no-repeat 0 0;
+}
+
+/* Form styles */
+div.siteForm {
+	margin: 20px 0 15px;
+	padding: 0;
+	overflow: hidden;
+	font-size: 1.2em;
+}
+
+div.formHeader, div.formHeader h2 span, div.formHeader h2 {
+	display: block;
+	float: left;
+	color: #FFF;
+	font-size: 18px;
+}
+
+div.formHeader {
+	height: 44px;
+	overflow: hidden;
+	background: transparent url(../img/assets/formHeaderMiddle.jpg) repeat-x 0 0;
+}
+
+div.formHeader h2 {
+	background: transparent url(../img/assets/formHeaderLeft.jpg) no-repeat 0 0;
+}
+
+div.formHeader h2 span {
+	background: transparent url(../img/assets/formHeaderRight.jpg) no-repeat 100% 0;
+	padding: 16px 20px 28px;
+}
+
+div.formContent {
+	clear: both;
+	padding: 25px 15px;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	-moz-border-radius-bottomright: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+div.formContent label {
+	color: #585858;
+	display: block;
+	float: left;
+	width: 180px;
+}
+
+div.formContent div {
+	margin-bottom: 10px;
+}
+
+div.siteForm input {
+	width: 250px;
+}
+
+div.siteForm input, div.siteForm textarea {
+	padding: 5px;
+	background-color: #FFF;
+	border: 2px inset;
+}
+
+div.siteForm div.submit input {
+	width: 131px;
+	height: 37px;
+	overflow: hidden;
+	background: transparent url(../img/assets/formButtonBGImg.gif) no-repeat 0 0;
+	border: 0px solid #FFF; /* IE fix */
+	cursor: pointer;
+	cursor: hand; /* IE 5.5 */
+	display: block;
+	margin: 5px 0;
+	color: #FFF;
+}
+
+div.siteForm div.submit input:hover {
+	background-position: 0 -37px;
+}
+
+/* Notice Boxes */
+.notice-info, .notice-success, .notice-warning, .notice-error {
+	border: 1px solid;
+	margin: 5px 0px 25px !important;
+	padding:15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+.notice-info h2, .notice-info h3, .notice-info h4, 
+.notice-success h2, .notice-success h3, .notice-success h4, 
+.notice-warning h2, .notice-warning h3, .notice-warning h4,
+.notice-error h2, .notice-error h3, .notice-error h4 {
+	padding: 0 0 10px;
+}
+
+.notice-info {
+	color: #00529B;
+	background-color: #BDE5F8;
+	background-image: url('../img/assets/info.gif');
+}
+
+.notice-success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image:url('../img/assets/success.gif');
+}
+
+.notice-warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url('../img/assets/warning.gif');
+}
+
+.notice-error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('../img/assets/error.gif');
+}
+
 
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
 .cake-sql-log tr td {

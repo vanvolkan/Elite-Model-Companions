@@ -1,5 +1,5 @@
 <div class="eliteModels form">
-<?php echo $this->Form->create('EliteModel');?>
+<?php echo $this->Form->create('EliteModel', array('type' => 'file'));?>
 	<fieldset>
  		<legend><?php __('Add Elite Model'); ?></legend>
 	<?php
@@ -13,6 +13,8 @@
 		echo $this->Form->input('cost');
 		echo $this->Form->input('description');
 		echo $this->Form->input('is_featured');
+		echo $this->Html->tag('h2', 'Model Images');
+		echo $this->Form->input('ModelImage.')
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

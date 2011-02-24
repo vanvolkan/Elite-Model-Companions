@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 11, 2011 at 12:15 AM
+-- Generation Time: Feb 17, 2011 at 11:26 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.2
 
@@ -16,7 +16,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `elite_model_companions`
+-- Database: `elitemod_eliteModelCompanions`
 --
 
 -- --------------------------------------------------------
@@ -25,8 +25,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Table structure for table `banners`
 --
 
-DROP TABLE IF EXISTS `banners`;
-CREATE TABLE IF NOT EXISTS `banners` (
+CREATE TABLE `banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(150) DEFAULT NULL,
   `image_location` varchar(255) NOT NULL,
@@ -53,8 +52,7 @@ INSERT INTO `banners` VALUES(6, 'Elite', 'banner_img1.jpg', '2011-02-10 21:37:30
 -- Table structure for table `cake_sessions`
 --
 
-DROP TABLE IF EXISTS `cake_sessions`;
-CREATE TABLE IF NOT EXISTS `cake_sessions` (
+CREATE TABLE `cake_sessions` (
   `id` varchar(255) NOT NULL DEFAULT '',
   `data` text,
   `expires` int(11) DEFAULT NULL,
@@ -65,8 +63,8 @@ CREATE TABLE IF NOT EXISTS `cake_sessions` (
 -- Dumping data for table `cake_sessions`
 --
 
-INSERT INTO `cake_sessions` VALUES('3a043965b73fd1ff45233364ed832391', 'Config|a:3:{s:9:"userAgent";s:32:"5afb744a681c6f6d6ee93c8df61050be";s:4:"time";i:1297350933;s:7:"timeout";i:10;}', 1297350933);
-INSERT INTO `cake_sessions` VALUES('1f1c065b97ff4487198a7fabfcce9b08', 'Config|a:3:{s:9:"userAgent";s:32:"5d7a84cbbed37269d854af4ee43684d2";s:4:"time";i:1297355711;s:7:"timeout";i:10;}', 1297355711);
+INSERT INTO `cake_sessions` VALUES('4083df33402fffebc11987854d557564', 'Config|a:3:{s:9:"userAgent";s:32:"5afb744a681c6f6d6ee93c8df61050be";s:4:"time";i:1297951907;s:7:"timeout";i:10;}Message|a:0:{}Auth|a:1:{s:8:"redirect";s:19:"/admin/users/logout";}', 1297951907);
+INSERT INTO `cake_sessions` VALUES('01d332075e238c0ec03a5cd9e9977d41', 'Config|a:3:{s:9:"userAgent";s:32:"650740d015848a94559d2b96bd82fc6a";s:4:"time";i:1297957571;s:7:"timeout";i:10;}Auth|a:1:{s:8:"redirect";s:19:"/admin/users/logout";}Message|a:0:{}', 1297957571);
 
 -- --------------------------------------------------------
 
@@ -74,8 +72,7 @@ INSERT INTO `cake_sessions` VALUES('1f1c065b97ff4487198a7fabfcce9b08', 'Config|a
 -- Table structure for table `contacts`
 --
 
-DROP TABLE IF EXISTS `contacts`;
-CREATE TABLE IF NOT EXISTS `contacts` (
+CREATE TABLE `contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -98,8 +95,7 @@ INSERT INTO `contacts` VALUES(2, 'Slav', 'slavlazar@gmail.com', '', 'Testttttttt
 -- Table structure for table `elite_models`
 --
 
-DROP TABLE IF EXISTS `elite_models`;
-CREATE TABLE IF NOT EXISTS `elite_models` (
+CREATE TABLE `elite_models` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `age` varchar(3) NOT NULL,
@@ -126,11 +122,52 @@ INSERT INTO `elite_models` VALUES(4, 'Kate: the Sensitive Soul', '19', '5''8"', 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `employments`
+--
+
+CREATE TABLE `employments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `work_name` varchar(100) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(80) NOT NULL,
+  `email_address` varchar(100) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `suburb` varchar(20) NOT NULL,
+  `state` varchar(20) NOT NULL,
+  `age` int(3) NOT NULL,
+  `height` varchar(50) NOT NULL,
+  `dress_size` varchar(50) NOT NULL,
+  `shoe_size` varchar(20) NOT NULL,
+  `bust_size` varchar(20) NOT NULL,
+  `natural` enum('Yes','No') NOT NULL DEFAULT 'No',
+  `waist` varchar(20) NOT NULL,
+  `hips` varchar(20) NOT NULL,
+  `hair_colour` varchar(20) NOT NULL,
+  `hair_length` varchar(30) NOT NULL,
+  `eye_colour` varchar(20) NOT NULL,
+  `how_heard` varchar(255) DEFAULT NULL,
+  `description` text NOT NULL,
+  `recent_photograph1` varchar(255) NOT NULL,
+  `recent_photograph2` varchar(255) DEFAULT NULL,
+  `recent_photograph3` varchar(255) DEFAULT NULL,
+  `recent_photograph4` varchar(255) DEFAULT NULL,
+  `ip_address` varchar(100) NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `employments`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `model_images`
 --
 
-DROP TABLE IF EXISTS `model_images`;
-CREATE TABLE IF NOT EXISTS `model_images` (
+CREATE TABLE `model_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `elite_model_id` int(11) NOT NULL,
   `location` varchar(255) NOT NULL,
@@ -142,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `model_images` (
 -- Dumping data for table `model_images`
 --
 
-INSERT INTO `model_images` VALUES(1, 1, 'models/rebecca.jpg');
+INSERT INTO `model_images` VALUES(1, 1, '/models/rebecca.jpg');
 
 -- --------------------------------------------------------
 
@@ -150,8 +187,7 @@ INSERT INTO `model_images` VALUES(1, 1, 'models/rebecca.jpg');
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(40) DEFAULT NULL,
@@ -159,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
