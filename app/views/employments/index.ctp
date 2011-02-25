@@ -9,8 +9,16 @@
 	<div class="formHeader"><h2><span>Employment</span></h2></div>
 	<div class="formContent">
 		<?php
+			if (isset($errors))
+				echo $this->element('errors', array('errors' => $errors));
+			else if (isset($submitted))
+				echo $this->element('formSuccess', array('data' => $submitted));
+				
 			echo $this->Form->create('Employment', array(
-				'type'				=> 'file'
+				'type'				=> 'file',
+				'inputDefaults'	=> array(
+					'error' => false
+				)
 			));
 		
 			echo $this->Form->input('work_name', array('label' => 'Work Name:'));

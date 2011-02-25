@@ -10,7 +10,7 @@ class EliteModelsController extends AppController {
 				'order'			=> 'RAND()',
 				'conditions'	=> array('EliteModel.is_featured' => 1),
 				'contain'		=> array('ModelImage.location'),
-				'fields'		=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description')
+				'fields'		=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description', 'EliteModel.id')
 			))) {
 				$featuredModel = $this->EliteModel->find('first', array(
 					'order'		=> 'RAND()',

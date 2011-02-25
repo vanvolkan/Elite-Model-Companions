@@ -8,11 +8,8 @@
 				<?php 
 					if (isset($errors))
 						echo $this->element('errors', array('errors' => $errors));
-					if (isset($submitted)):
-				?>
-					<div class="notice-success"><h3>Thank you</h3><?php echo $submitted; ?></div>
-				<?php
-					endif;
+					 else if (isset($submitted))
+						echo $this->element('formSuccess', array('data' => $submitted));
 					
     				echo $this->Form->create('Contact', array(
     					'inputDefaults' => array(

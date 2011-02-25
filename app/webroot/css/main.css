@@ -289,9 +289,14 @@ div.frontFeaturedModelContainer div.modelImageContainer {
 	padding: 5px;
 }
 
-div.frontFeaturedModelContainer div.modelImageContainer div {
+div.frontFeaturedModelContainer div.modelImageContainer div, div.frontFeaturedModelContainer div.modelImageContainer div a {
+	display: block;
 	width: 321px;
 	height: 316px;
+	cursor: pointer; /* IE */
+}
+
+div.frontFeaturedModelContainer div.modelImageContainer div {
 	overflow: hidden;
 	margin: 3px auto 0;
 	text-align: center;
@@ -311,6 +316,11 @@ div.frontFeaturedModelContainer p {
 div.frontFeaturedModelContainer h6 {
 	width: 165px;
 	white-space: pre-wrap;
+}
+
+div.frontFeaturedModelContainer h6 a {
+	text-decoration: none;
+	cursor: pointer;
 }
 
 div#employmentForm p, div#employmentForm h1, div#employmentForm h2, div#employmentForm h3, div#employmentForm h4, div#employmentForm h5, div#employmentForm div {
@@ -375,7 +385,7 @@ div#footer div.footerLinks ul li span {
 	clear: both;
 }
 
-.redText {
+.redText, .redText a {
 	color: #7b011d;
 }
 
@@ -393,7 +403,7 @@ div#elite_models_index {
 
 ul.elite_models_list li {
 	width: 221px;
-	margin-right: 20px;
+	margin: 0 20px 10px 0;
 	float: left;
 }
 

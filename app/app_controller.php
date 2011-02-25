@@ -9,7 +9,7 @@
 			$user = $this->Session->read('Auth.User');
 			
 			if (isset($this->params['admin']) && $this->params['admin'] && is_null($user)) {
-				$this->Session->setFlash('You need to be logged in for that action.', 'default', array('class' => 'flash_bad'));
+				$this->Session->setFlash(__('You need to be logged in for that action.', 'flash_error', true), 'flash_error');
 				$this->redirect(array('controller' => 'users', 'action' => 'login', 'admin' => true));
 			}
 			

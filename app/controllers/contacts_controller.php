@@ -1,5 +1,5 @@
 <?php
-
+	App::import('Sanitize');
 	class ContactsController extends AppController {
 		public $name = 'Contacts';
 		public $components = array('Email');
@@ -8,6 +8,7 @@
 		public function index() 
 		{
 			if ($this->RequestHandler->isPost()) {
+				$this->data = Sanitize::clean($this->data);
 		        $this->Contact->set($this->data);
 		        if ($this->Contact->validates()) {
 		            //send email using the Email component
@@ -31,4 +32,3 @@
 		}
 		
     }
-?>
