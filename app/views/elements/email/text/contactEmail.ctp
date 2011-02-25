@@ -1,0 +1,1 @@
+You have received a contact submission\n\nFull Name: " . $Contact['Contact']['full_name'] . "\nEmail: " . $Contact['Contact']['email'] . "\nContact Number: " . $Contact['Contact']['contact_number'] . "\nEnquiry: " . $Contact['Contact']['enquiry']

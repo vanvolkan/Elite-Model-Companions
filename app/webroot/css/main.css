@@ -511,6 +511,7 @@ div.siteForm div.submit input {
 	display: block;
 	margin: 5px 0;
 	color: #FFF;
+	float: right;
 }
 
 div.siteForm div.submit input:hover {

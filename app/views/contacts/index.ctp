@@ -25,6 +25,7 @@
 					echo $this->Form->input('enquiry');
     				echo $this->Form->end('Send', array('div' => array('class' => 'submit')));
 				?>
+				<div class="clear"></div>
 			</div>
 		</div>
 	</div>

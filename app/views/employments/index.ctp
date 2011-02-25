@@ -5,41 +5,42 @@
 <p>To apply as a high class escort you must be extremely attractive, illegal-drug free, body-pierce and scar free, warm and friendly, immaculately groomed, confident but polite, and of course, very sexually passionate and free.  You cannot assist a refined man in sensuality if you do not even know your own body or enjoy your own sexuality.</p>
 <p>Finally, you must be between 18–30 yrs old to maximize your work.  We prefer ladies who like to see less clientele, but high quality, high paying ones.  Rather than seeing 3-6 gentlemen a night, you will spend time with 1-2 clients per night, and spend 2-12 hours there, at a higher price.</p>
 <p>If you are one of these lovely women, we look forward to hearing from you:</p>
-<div id="employmentForm">
-	<?php
-		echo $this->Form->create('Employment', array(
-			'type'				=> 'file',
-			'inputDefaults'		=> array(
-				'label'			=> false
-			)
-		));
+<div id="employmentForm" class="siteForm">
+	<div class="formHeader"><h2><span>Employment</span></h2></div>
+	<div class="formContent">
+		<?php
+			echo $this->Form->create('Employment', array(
+				'type'				=> 'file'
+			));
 		
-		echo $this->Form->input('work_name', array('label' => 'Work Name:'));
-		echo $this->Form->input('first_name', array('label' => 'First Name:'));
-		echo $this->Form->input('last_name', array('label' => 'Last Name:'));
-		echo $this->Form->input('email_address', array('label' => 'Email address:'));
-		echo $this->Form->input('phone_number', array('label' => 'Phone Number:'));
-		echo $this->Form->input('suburb', array('label' => 'Suburb:'));
-		echo $this->Form->input('state', array('label' => 'State:'));
-		echo $this->Form->input('age', array('label' => 'Age:'));
-		echo $this->Form->input('height', array('label' => 'Height:'));
-		echo $this->Form->input('dress_size', array('label' => 'Dress Size:'));
-		echo $this->Form->input('shoe_size', array('label' => 'Shoe Size:'));
-		echo $this->Form->input('bust_size', array('label' => 'Bust Size:'));
-		echo $this->Form->input('natural', array('label' => 'Naturual?', 'options' => array('Yes' => 'Yes', 'No' => 'No')));
-		echo $this->Form->input('waist', array('label' => 'Waist:'));
-		echo $this->Form->input('hips', array('label' => 'Hips:'));
-		echo $this->Form->input('hair_colour', array('label' => 'Hair Colour:'));
-		echo $this->Form->input('hair_length', array('label' => 'Hair Length:'));
-		echo $this->Form->input('eye_colour', array('label' => 'Eye Colour:'));
-		echo $this->Form->input('how_heard', array('label' => 'How did you hear about us:'));
-		echo $this->Form->input('description', array('before' => '<p>Please write a brief description about yourself i.e. passions, interests, past employment history, desired outcomes from escorting for Elite Model Companions and any other information you feel we should know:</p>'));
-		echo $this->Html->tag('h2', 'Recent Photographs');
-		echo $this->Form->file('recent_photograph1', array('label' => 'Upload One'));
-		echo $this->Form->file('recent_photograph2', array('label' => 'Upload Two'));
-		echo $this->Form->file('recent_photograph3', array('label' => 'Upload Three'));
-		echo $this->Form->file('recent_photograph4', array('label' => 'Upload Four'));
-		echo $this->Form->end('Submit');
-	?>
+			echo $this->Form->input('work_name', array('label' => 'Work Name:'));
+			echo $this->Form->input('first_name', array('label' => 'First Name:'));
+			echo $this->Form->input('last_name', array('label' => 'Last Name:'));
+			echo $this->Form->input('email_address', array('label' => 'Email address:'));
+			echo $this->Form->input('phone_number', array('label' => 'Phone Number:'));
+			echo $this->Form->input('suburb', array('label' => 'Suburb:'));
+			echo $this->Form->input('state', array('label' => 'State:'));
+			echo $this->Form->input('age', array('label' => 'Age:'));
+			echo $this->Form->input('height', array('label' => 'Height:'));
+			echo $this->Form->input('dress_size', array('label' => 'Dress Size:'));
+			echo $this->Form->input('shoe_size', array('label' => 'Shoe Size:'));
+			echo $this->Form->input('bust_size', array('label' => 'Bust Size:'));
+			echo $this->Form->input('natural', array('label' => 'Naturual?', 'options' => array('Yes' => 'Yes', 'No' => 'No')));
+			echo $this->Form->input('waist', array('label' => 'Waist:'));
+			echo $this->Form->input('hips', array('label' => 'Hips:'));
+			echo $this->Form->input('hair_colour', array('label' => 'Hair Colour:'));
+			echo $this->Form->input('hair_length', array('label' => 'Hair Length:'));
+			echo $this->Form->input('eye_colour', array('label' => 'Eye Colour:'));
+			echo $this->Form->input('how_heard', array('label' => 'How did you hear about us:'));
+			echo $this->Form->input('description', array('before' => '<div class="notice-info">Please write a brief description about yourself i.e. passions, interests, past employment history, desired outcomes from escorting for Elite Model Companions and any other information you feel we should know:</div>'));
+			echo $this->Html->tag('h2', 'Recent Photographs');
+			echo $this->Form->file('recent_photograph1', array('label' => 'Upload One'));
+			echo $this->Form->file('recent_photograph2', array('label' => 'Upload Two'));
+			echo $this->Form->file('recent_photograph3', array('label' => 'Upload Three'));
+			echo $this->Form->file('recent_photograph4', array('label' => 'Upload Four'));
+			echo $this->Form->end('Submit');
+		?>
+		<div class="clear"></div>
+	</div>
 </div>
 <div class="clear"></div>
