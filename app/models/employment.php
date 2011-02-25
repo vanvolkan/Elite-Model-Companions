@@ -211,8 +211,10 @@
 				
 				if ($size && !$error)
 					move_uploaded_file($tmp_name, $uploadDir . $tmp_name);
+				
+				$this->data['Employment'][$currentItem] = $tmp_name;
 			}
 			
-			parent::beforeSave($created);
+			return true;
 		}
 	}

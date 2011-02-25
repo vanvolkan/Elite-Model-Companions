@@ -17,8 +17,10 @@
 				$this->data['Employment']['recent_photograph2'] = $recent_photograph2;
 				$this->data['Employment']['recent_photograph3'] = $recent_photograph3;
 				$this->data['Employment']['recent_photograph4'] = $recent_photograph4;
+				$this->data['Employment']['ip_address'] = $this->RequestHandler->getClientIP();
 		        $this->Employment->set($this->data);
 				if ($this->Employment->validates()) {
+					// Set the IP of the user submitting the form
 					$this->Employment->save();
 					$this->set('submitted', 'Your application for Employment has been submitted. We will review your application and respond back to you if you are applicable.');
 					unset($this->data['Employment']);
