@@ -203,16 +203,18 @@
 		*/
 		public function beforeSave($created)
 		{
-			$uploadDir = APP_DIR . DS . 'tmp' . DS . 'employment';
+			$uploadDir = APP . 'tmp' . DS . 'employment' . DS;
 			
 			for ($i = 1; $i <= 4; $i++) {
 				$currentItem = 'recent_photograph' . $i;
 				extract($this->data['Employment'][$currentItem], EXTR_OVERWRITE);
+				$fileName = $uploadDir . '_' . time() . '_' . $name;
 				
-				if ($size && !$error)
-					move_uploaded_file($tmp_name, $uploadDir . $tmp_name);
-				
-				$this->data['Employment'][$currentItem] = $tmp_name;
+				if ($size && !$error) {
+					move_uploaded_file($tmp_name, $fileName);
+					$this->data['Employment'][$currentItem] = $fileName;
+				} else
+					$this->data['Employment'][$currentItem] = NULL;
 			}
 			
 			return true;

@@ -49,4 +49,4 @@
  *
  */
 
-require APP_DIR . DS . 'vendors' . DS . 'customClass.php';
+require APP . DS . 'vendors' . DS . 'customClass.php';
