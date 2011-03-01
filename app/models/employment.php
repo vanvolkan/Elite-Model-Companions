@@ -5,8 +5,8 @@
 		
 		public $validate = array(
 			'work_name'	=> array(
-				'alphaNumeric'		=> array(
-					'rule'			=> 'alphaNumeric',
+				'notEmpty'			=> array(
+					'rule'			=> 'notEmpty',
 					'required'		=> true,
 					'message'		=> 'Work name is required'
 				),

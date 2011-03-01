@@ -6,9 +6,8 @@
 <div class="frontFeaturedModelContainer">
 	<h1 class="hReplaced_red floatRight strtoupper">Featured Model</h1>
 	
-	
 	<div class="modelImageContainer">
-		<div style="background: transparent url(img/<?php echo $featuredModel['ModelImage'][0]['location']; ?>) no-repeat center center;">
+		<div style="background: transparent url(<?php echo $this->webroot; ?>img/<?php echo $featuredModel['ModelImage'][0]['location']; ?>) no-repeat center center;">
 			<?php
 				echo $this->Html->link($this->Html->tag('span', $featuredModel['EliteModel']['name']), array('controller' => 'elite_models', 'action' => 'view', $featuredModel['EliteModel']['id']), array('escape' => false, 'class' => 'hidespan'));
 			?>
