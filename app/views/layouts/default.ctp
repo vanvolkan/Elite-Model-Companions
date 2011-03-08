@@ -16,9 +16,9 @@
 			
 			echo $this->Html->meta('icon');
 				
-			echo $this->Html->css(array('main', 'sifr'));
+			echo $this->Html->css(array('main', 'sifr', 'jquery-ui-1.8.10.custom'));
 			
-			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config'));
+			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.10.custom.min'));
 			
 			echo $scripts_for_layout;
 		?>
@@ -65,6 +65,6 @@
 				</div>
 			</div>
 		</div>
-		<?php echo $this->element('sql_dump'); ?>
+		<?php echo $this->Js->writeBuffer(); ?>
 	</body>
 </html>

@@ -16,9 +16,9 @@
 			
 			echo $this->Html->meta('icon');
 				
-			echo $this->Html->css(array('main', 'sifr'));
+			echo $this->Html->css(array('main', 'sifr', 'jquery-ui-1.8.10.custom'));
 			
-			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config'));
+			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.10.custom.min'));
 			
 			echo $scripts_for_layout;
 		?>
@@ -36,14 +36,17 @@
 					
 				</div>
 			</div>
+			<?php if (isset($__ADMIN_USER__)): ?>
 			<!-- Begin Admin Menu -->
 			<?php echo $this->element('mainMenu', array('currentPage' => $this->here, 'admin' => true)); ?>
+			<?php endif; ?>
 			<!-- Begin Body -->
 			<div id="mainBody" class="section">
 				<div class="content">
 					<div class="roundedBottomMain">
 						<div class="padded">
 							<div id="content_page">
+								<div class="notice-info">Welcome to the admin area of the website. <?php echo $this->Html->link('Click here to go to the public website', '/', array('escape' => false)); ?></div>
 								<?php echo $this->Session->flash(); ?>
 								<?php echo $this->Session->flash('email'); ?>
 
@@ -51,13 +54,15 @@
 							</div>
 							
 							<div id="footer">
-								<?php echo $this->element('footer'); ?>
+								<div class="webCopyright">
+									<p>Web design &amp; Web Development - <a href="mailto:ohyeahmedia@gmail.com">Oh Yeah Media</a></p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<?php echo $this->element('sql_dump'); ?>
+		<?php echo $this->Js->writeBuffer(); ?>
 	</body>
 </html>

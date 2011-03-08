@@ -32,6 +32,7 @@
  */
 	Router::connect('/guide', array('controller' => 'pages', 'action' => 'display', 'guide'));
 	Router::connect('/rates', array('controller' => 'pages', 'action' => 'display', 'rates'));
+	Router::connect('/bookings/*', array('controller' => 'bookings', 'action' => 'book'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 	Router::connect('/admin/:controller/:action/*', array(

@@ -12,7 +12,7 @@
 					'save_path'			=> WWW_ROOT . 'img/models/thumbs',
 					'display_path'		=> 'models/thumbs',
 					'error_image_path'	=> 'models/error.jpg',
-					'src'				=> 'img' . $src,
+					'src'				=> 'img/' . $src,
 					'w'					=> 221,
 					'h'					=> 300,
 					'q'					=> 100,

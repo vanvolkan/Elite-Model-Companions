@@ -23,7 +23,18 @@
 		
 		public function admin_index()
 		{
-			// Home page
+			$this->loadModel('EliteModel');
+			$this->loadModel('Employment');
+			$this->loadModel('Contact');
+			$this->loadModel('Booking');
+			
+			$eliteModelCount = $this->EliteModel->find('count');
+			$employmentCount = $this->Employment->find('count');
+			$contactCount = $this->Contact->find('count');
+			$bookingCount = $this->Booking->find('count');
+			
+			$this->set(compact('eliteModelCount', 'employmentCount', 'contactCount', 'bookingCount'));
+			
 		}
 		
 		public function admin_login()

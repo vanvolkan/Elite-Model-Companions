@@ -1,8 +1,8 @@
 <?php
 	class AppController extends Controller
 	{
-		public $components = array('RequestHandler', 'Session');
-		public $helpers = array('Html', 'Form', 'Js', 'Session', 'Cache', 'Paginator', 'Text');
+		public $components = array('RequestHandler', 'Session', 'DebugKit.Toolbar');
+		public $helpers = array('Html', 'Form', 'Js' => array('Jquery'), 'Session', 'Cache', 'Paginator', 'Text');
 		
 		function beforeFilter()
 		{
@@ -21,6 +21,9 @@
 			$user = $this->Session->read('Auth.User');
 			
 			if (!is_null($user))
+				$this->set('__ADMIN_USER__', true);
+			
+			if (isset($this->params['admin']))
 				$this->layout = 'admin_layout';
 				
 			parent::beforeRender();

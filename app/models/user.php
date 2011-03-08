@@ -3,7 +3,7 @@
 	{
 		public $name = 'User';
 		
-		function hashPasswords($data)
+		public function hashPasswords($data)
 		{
 			if (isset($data['User']['password']))
 			{
