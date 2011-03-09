@@ -70,6 +70,7 @@ class EliteModelsController extends AppController {
 		}
 		if (empty($this->data)) {
 			$this->data = $this->EliteModel->read(null, $id);
+			$this->set('eliteModel', $this->data);
 		}
 	}
 

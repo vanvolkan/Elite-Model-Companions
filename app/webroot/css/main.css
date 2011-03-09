@@ -723,6 +723,122 @@ div.tableStyleHorizontalList ul li a:hover {
 	background-color: #f1f1f1;
 }
 
+/* Buttons */
+a.standardButton, a.standardButton span {
+	display: block;
+	background-image: url(../img/assets/standardButtonBG.gif);
+	background-color: transparent;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFF;
+	width: auto;
+	height: 45px;
+	float: left;
+}
+
+a.standardButton {
+	background-position: 0 0;
+	margin: 5px 0;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+a.standardButton span {
+	background-position: 100% -90px;
+	background-repeat: repeat-x;
+	padding: 12px 15px 0 8px;
+	margin-left: 7px;
+}
+
+a.standardButton:hover {
+	background-position: 0 -45px;
+}
+
+a.standardButton:hover span {
+	background-position: 100% -135px;
+}
+
+/* Table classes */
+table.standardTableClass {
+	width: 100%;
+	border: none;
+	border-left: 1px solid #efeeee;
+	border-right: 1px solid #efeeee;
+	border-bottom: 1px solid #efeeee;
+}
+
+table.standardTableClass tr th, table.standardTableClass tr th a, table.standardTableClass tr th h1, table.standardTableClass tr th h2, table.standardTableClass tr th h3, table.standardTableClass tr th h4,
+table.standardTableClass tr th h5, table.standardTableClass tr th h6, table.standardTableClass tr th span, table.standardTableClass tr th p {
+	color: #FFF;
+}
+
+table.standardTableClass tr th a {
+	text-decoration: none;
+	border-bottom: 1px dotted #FFF;
+}
+
+table.standardTableClass tr th {
+	background-color: #969696;
+	border-bottom: 1px solid #FFF;
+	padding: 10px 5px 10px 10px;
+	vertical-align: middle;
+}
+
+table.standardTableClass tr td {
+	background-color: #f7f7f7;
+	border-top: 1px solid #efeeee;
+	padding: 8px 5px 8px 10px;
+}
+
+table.standardTableClass tr.altrow td {
+	background-color: #fafafa;
+}
+
+table.standardTableClass tr.hoverRow td {
+	background-color: #ececec !important;
+}
+
+table.standardTableClass tr td.actions a {
+	margin: 0 10px;
+}
+
+div.resultStats {
+	margin: 2px 0;
+	text-align: center;
+}
+
+div.resultStats p {
+	padding: 0 0 4px;
+}
+
+div.legendBox {
+	float: right;
+	padding: 5px 30px;
+	margin: 0 0 2px;
+	border: 1px solid #f1f1f1;
+	background-color: #FFF;
+}
+
+div.legendBox h3 {
+	text-align: center;
+}
+
+div.legendBox div {
+	padding-top: 8px;
+	clear: both;
+}
+
+div.legendBox div img, div.legendBox div span {
+	display: block;
+	float: left;
+}
+
+div.legendBox div span {
+	padding-left: 10px;
+}
+
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
 .cake-sql-log tr td {
 	background: #fff;

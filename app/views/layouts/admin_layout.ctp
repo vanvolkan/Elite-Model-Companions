@@ -18,7 +18,7 @@
 				
 			echo $this->Html->css(array('main', 'sifr', 'jquery-ui-1.8.10.custom'));
 			
-			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.10.custom.min'));
+			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.10.custom.min', 'siteWideFunctions'));
 			
 			echo $scripts_for_layout;
 		?>
