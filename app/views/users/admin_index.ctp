@@ -1,4 +1,4 @@
-<h1>Welcome admin</h1>
+<h1>Welcome <?php echo ucwords($loggedInUser['username']); ?></h1>
 
 <p>Below are a list of tasks and stats for Elite Model Companions</p>
 <div class="two_col_layout">
@@ -11,6 +11,7 @@
 						<li class="first-child"><?php echo $this->Html->link('Add a new Elite Model', array('controller' => 'elite_models', 'action' => 'add', 'admin' => true)); ?></li>
 						<li><?php echo $this->Html->link('View all Elite Models', array('controller' => 'elite_models', 'action' => 'index', 'admin' => true)); ?></li>
 						<li><?php echo $this->Html->link('Goto public area website', '/'); ?></li>
+						<li><?php echo $this->Html->link('Change my password', array('controller' => 'users', 'action' => 'changePassword', 'admin' => true), array('escape' => false)); ?></li>
 						<li><?php echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout')); ?></li>
 					</ul>
 				</div>

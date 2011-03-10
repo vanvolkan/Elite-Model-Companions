@@ -1,25 +1,11 @@
 <?php
+	App::import('Sanitize');
 	class UsersController extends AppController
 	{
 		public $name = 'Users';
 		public $scaffold;
 		
 		public $components = array('Auth');
-		
-		// public function login()
-		// 		{
-		// 			if ($this->Session->read('User'))
-		// 				$this->redirect(array('action' => 'index', 'admin' => true), 0, true);
-		// 			
-		// 			if (!empty($this->data)) {
-		// 				// unset unrequired validation rules
-		// 				unset($this->User->validate['username']['check_username_exists']);
-		// 				
-		// 				// validate form
-		// 				$this->User->set($this->data);
-		// 				
-		// 			}
-		// 		}
 		
 		public function admin_index()
 		{
@@ -32,8 +18,9 @@
 			$employmentCount = $this->Employment->find('count');
 			$contactCount = $this->Contact->find('count');
 			$bookingCount = $this->Booking->find('count');
+			$loggedInUser = $this->Session->read('Auth.User');
 			
-			$this->set(compact('eliteModelCount', 'employmentCount', 'contactCount', 'bookingCount'));
+			$this->set(compact('eliteModelCount', 'employmentCount', 'contactCount', 'bookingCount', 'loggedInUser'));
 			
 		}
 		
@@ -47,6 +34,25 @@
 		public function admin_logout()
 		{
 			$this->redirect($this->Auth->logout());
+		}
+		
+		public function admin_changePassword()
+		{
+			if ($this->RequestHandler->isPost()) {
+				$this->data = Sanitize::clean($this->data);
+				$this->User->set($this->data);
+				if ($this->User->validates()) {
+					$this->User->save();
+					$this->Session->setFlash(__('Your password has been updated!', true), 'flash_success');
+					$this->redirect(array('action' => 'index', 'admin' => true));
+				} else {
+					$this->Session->setFlash(__('Errors occured during submission. Please review and fix the errors below.', true), 'flash_error');
+					$this->set('errors', $this->User->validationErrors);
+					$this->data = array();
+				}
+			}
+			
+			$this->set('loggedInUser', $this->Session->read('Auth.User'));
 		}
 		
 		public function beforeFilter()

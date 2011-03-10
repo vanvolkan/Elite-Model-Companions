@@ -839,6 +839,15 @@ div.legendBox div span {
 	padding-left: 10px;
 }
 
+.paddedHeading {
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+.paddRight20 {
+	padding-right: 20px;
+}
+
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
 .cake-sql-log tr td {
 	background: #fff;
