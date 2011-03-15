@@ -41,11 +41,11 @@
 			echo $this->Form->input('eye_colour', array('label' => 'Eye Colour:'));
 			echo $this->Form->input('how_heard', array('label' => 'How did you hear about us:'));
 			echo $this->Form->input('description', array('before' => '<div class="notice-info">Please write a brief description about yourself i.e. passions, interests, past employment history, desired outcomes from escorting for Elite Model Companions and any other information you feel we should know:</div>'));
-			echo $this->Html->tag('h2', 'Recent Photographs');
-			echo $this->Form->file('recent_photograph1', array('label' => 'Upload One'));
-			echo $this->Form->file('recent_photograph2', array('label' => 'Upload Two'));
-			echo $this->Form->file('recent_photograph3', array('label' => 'Upload Three'));
-			echo $this->Form->file('recent_photograph4', array('label' => 'Upload Four'));
+			echo $this->Html->tag('h2', 'Recent Photographs', array('class' => 'formHeadingRedSpaced'));
+			echo $this->Html->tag('div', $this->Form->label('Upload One:') . $this->Form->file('recent_photograph1'), array('class' => 'input text'));
+			echo $this->Html->tag('div', $this->Form->label('Upload Two:') . $this->Form->file('recent_photograph2'), array('class' => 'input text'));
+			echo $this->Html->tag('div', $this->Form->label('Upload Three:') . $this->Form->file('recent_photograph3'), array('class' => 'input text'));
+			echo $this->Html->tag('div', $this->Form->label('Upload Four:') . $this->Form->file('recent_photograph4'), array('class' => 'input text'));
 			echo $this->Form->end('Submit');
 		?>
 		<div class="clear"></div>

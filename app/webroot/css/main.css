@@ -569,7 +569,6 @@ div.siteForm input {
 div.siteForm input, div.siteForm textarea {
 	padding: 5px;
 	background-color: #FFF;
-	border: 2px inset;
 }
 
 div.siteForm div.submit input {
@@ -760,6 +759,11 @@ a.standardButton:hover span {
 	background-position: 100% -135px;
 }
 
+.formHeadingRedSpaced {
+	padding: 15px 0;
+	color: #7b011d;
+}
+
 /* Table classes */
 table.standardTableClass {
 	width: 100%;
@@ -804,6 +808,33 @@ table.standardTableClass tr td.actions a {
 	margin: 0 10px;
 }
 
+table.additionalStandardTableClass {
+	width: 100%;
+	border: 1px solid #cdcdcd;
+}
+
+table.additionalStandardTableClass tr th, table.additionalStandardTableClass tr th a, table.additionalStandardTableClass tr th p, table.additionalStandardTableClass tr th h1, table.additionalStandardTableClass tr th h2,
+table.additionalStandardTableClass tr th h3, table.additionalStandardTableClass tr th h4, table.additionalStandardTableClass tr th h5 {
+	color: #FFF;
+}
+
+table.additionalStandardTableClass tr th {
+	background-color: #790010;
+	border-bottom: 1px solid #710000;
+	padding: 15px;
+}
+
+table.additionalStandardTableClass tr td {
+	background-color: #fbfbfb;
+	border-top: 1px solid #e8e8e8;
+	padding: 15px;
+	vertical-align: middle;
+}
+
+table.additionalStandardTableClass tr:first-child td {
+	border-top: none;
+}
+
 div.resultStats {
 	margin: 2px 0;
 	text-align: center;
@@ -846,6 +877,26 @@ div.legendBox div span {
 
 .paddRight20 {
 	padding-right: 20px;
+}
+
+div.adminModelImageContainer {
+	margin: 0 0 15px !important;
+}
+
+/* Image icons */
+a.addIcon {
+	background: transparent url(../img/assets/plus_icon.gif) no-repeat 0 0;
+	color: #333;
+	font-weight: bold;
+	padding: 5px 0 5px 30px;
+	margin: 15px 0;
+	text-decoration: none;
+	height: 21px;
+	overflow: hidden;
+}
+
+a.addIcon:hover {
+	color: #193f0d;
 }
 
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */

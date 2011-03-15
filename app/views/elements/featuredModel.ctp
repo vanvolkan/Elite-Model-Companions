@@ -1,5 +1,5 @@
 <?php
-	$featuredModel = $this->requestAction(array('controller' => 'eliteModels', 'action' => 'index'));
+	$featuredModel = $this->requestAction(array('controller' => 'elite_models', 'action' => 'index'));
 	if ($featuredModel):
 ?>
 <!-- Featured Model -->
@@ -7,7 +7,11 @@
 	<h1 class="hReplaced_red floatRight strtoupper">Featured Model</h1>
 	
 	<div class="modelImageContainer">
-		<div style="background: transparent url(<?php echo $this->webroot; ?>img/<?php echo $featuredModel['ModelImage'][0]['location']; ?>) no-repeat center center;">
+		<?php if (!empty($featuredModel['ModelImage'])): ?>
+			<div style="background: transparent url(<?php echo $this->webroot; ?><?php echo $featuredModel['ModelImage'][0]['location']; ?>) no-repeat center center;">
+		<?php else: ?>
+			<div style="background: transparent url(<?php echo $this->webroot; ?>img/models/error.jpg) no-repeat center center;">
+		<?php endif; ?>
 			<?php
 				echo $this->Html->link($this->Html->tag('span', $featuredModel['EliteModel']['name']), array('controller' => 'elite_models', 'action' => 'view', $featuredModel['EliteModel']['id']), array('escape' => false, 'class' => 'hidespan'));
 			?>
