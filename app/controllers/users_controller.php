@@ -27,6 +27,8 @@
 		public function admin_login()
 		{
 			if ($this->Auth->user()) {
+				$this->User->id = $this->Auth->user('id');
+				$this->User->saveField('last_login', date('Y-m-d H:i:s'));
 				$this->redirect(array('controller' => 'users', 'action' => 'index', 'admin' => true));
 			}
 		}
