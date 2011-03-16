@@ -13,4 +13,9 @@ jQuery(document).ready(function($) {
 
 		return false;
 	});
+	
+	$("a[rel^='prettyPhoto']").prettyPhoto({
+		show_title: false,
+		theme: 'light_rounded'
+	});
 });

@@ -133,7 +133,7 @@ class EliteModel extends AppModel {
 				if (!$this->validateUploadFile($data['ModelImage'][$i])) {
 					$errors = true;
 					break;
-				}		
+				}
 				$imageUploads[] = $data['ModelImage'][$i]['location'];
 			}
 		}
@@ -174,7 +174,7 @@ class EliteModel extends AppModel {
 	{
 		// Set the class of the model
 		$classes = array(
-			'Gold'		=> array('min' => 0, 'max' => 800),
+			'Gold'		=> array('min' => 500, 'max' => 800),
 			'Platinum'	=> array('min' => 801, 'max' => 1500),
 			'Celebrity'	=> array('min' => 1501, 'max' => 10000)
 		);

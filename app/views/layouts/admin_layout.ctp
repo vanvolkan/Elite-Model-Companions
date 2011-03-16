@@ -16,9 +16,9 @@
 			
 			echo $this->Html->meta('icon');
 				
-			echo $this->Html->css(array('main', 'sifr', 'jquery-ui-1.8.10.custom'));
+			echo $this->Html->css(array('main', 'sifr', 'jquery-ui-1.8.10.custom', 'prettyPhoto'));
 			
-			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.10.custom.min', 'siteWideFunctions'));
+			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.10.custom.min', 'siteWideFunctions', 'jquery.prettyPhoto'));
 			
 			echo $scripts_for_layout;
 		?>

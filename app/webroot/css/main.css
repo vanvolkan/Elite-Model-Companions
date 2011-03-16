@@ -899,6 +899,38 @@ a.addIcon:hover {
 	color: #193f0d;
 }
 
+/* Model Images Container */
+div.eliteModelImageDivContainer {
+	padding: 15px;
+}
+
+div.eliteModelImageDivContainer a#heroImage {
+	display: block;
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+div.eliteModelImageDivContainer div.thumbsContainer {
+	float: right;
+	padding: 15px;
+	background-color: #e1e1e1;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	width: 345px;
+}
+
+div.eliteModelImageDivContainer div.thumbsContainer ul li {
+	float: left;
+	padding: 0 5px 5px 0;
+}
+
+div.eliteModelImageDivContainer div.thumbsContainer ul li.farRight {
+	padding-right: 0;
+	clear: right;
+}
+
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
 .cake-sql-log tr td {
 	background: #fff;
