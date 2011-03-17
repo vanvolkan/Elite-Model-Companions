@@ -144,9 +144,11 @@ class EliteModel extends AppModel {
 		return $imageUploads;
 	}
 	
-	public function preSaveHandleUploads()
+	public function preSaveHandleUploads($data = null)
 	{
-		if (!$images = $this->handleUploads($this->data)) 
+		if (is_null($data))
+			$data = $this->data;
+		if (!$images = $this->handleUploads($data)) 
 			return false;
 		
 		$modelsDir = 'models' . DS;
@@ -169,6 +171,34 @@ class EliteModel extends AppModel {
 		
 		return $this->data;
 	}
+	
+	/* Stopped working on this as it was taking too long - this will enable additional images to edit screen
+	public function checkImagesAndHandle($id, $data)
+	{
+		if (!$id && !$data || !isset($data['ModelImage']))
+			return true;
+		
+		$countHowManyCurrentImages = $this->ModelImage->find('count', array(
+			'conditions'		=> array('elite_model_id' => $id)
+		));
+		
+		if (count($data['ModelImage']) > $countHowManyCurrentImages) {
+			var_dump($data['ModelImage']['location']['error']);
+			var_dump($countHowManyCurrentImages);
+			die('additional image');
+			// User has uploaded additional images - take care of this
+			
+			// Only save the images that are new
+			$newImages = array();
+			for ($i = 0; $i < count($data['ModelImage']); $i++)
+				$newImages[] = $data['ModelImage'][$i];
+			
+			if (!$this->preSaveHandleUploads(array('ModelImage' => $newImages)))
+				return false;
+		}
+		return true;
+	}
+	*/
 
 	public function beforeSave()
 	{

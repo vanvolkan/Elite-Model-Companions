@@ -28,7 +28,6 @@
 				
 			// Check for basic PHP file errors
 			if ($uploaded_info['error'] !== 0) {
-				die($uploaded_info['error']);
 				return false;
 			}
 			

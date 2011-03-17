@@ -17,5 +17,11 @@ jQuery(document).ready(function($) {
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		show_title: false,
 		theme: 'light_rounded'
+	}).hover(function() {
+		if ($(this).find('#zoomOverlay').length > 0)
+			$(this).find('#zoomOverlay').fadeIn('medium');
+	}, function() {
+		if ($(this).find('#zoomOverlay').length > 0)
+			$(this).find('#zoomOverlay').fadeOut('fast');
 	});
 });

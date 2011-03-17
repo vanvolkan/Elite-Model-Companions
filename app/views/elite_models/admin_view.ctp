@@ -7,7 +7,7 @@
 <div class="siteForm">
 	<div class="formHeader"><h2><span><?php echo $eliteModel['EliteModel']['name']; ?></span></h2></div>
 	<div class="formContent">
-		<?php if (isset($eliteModel['ModelImage'])): ?>
+		<?php if (isset($eliteModel['ModelImage']) && count($eliteModel['ModelImage']) > 0): ?>
 			<div class="eliteModelImageDivContainer">
 				<?php
 					$imagesArray = array();
@@ -38,13 +38,13 @@
 					endforeach;
 				?>
 				
-				<a id="heroImage" rel="prettyPhoto" href="<?php echo $this->webroot . $eliteModel['ModelImage'][0]['location']; ?>"><?php echo $this->Html->image($imagesArray[0]['larger']['src'], array('alt' => $eliteModel['EliteModel']['name'])); ?></a>
+				<a id="heroImage" rel="prettyPhoto" href="<?php echo $this->webroot . $eliteModel['ModelImage'][0]['location']; ?>"><div id="zoomOverlay"><span>Zoom</span></div><?php echo $this->Html->image($imagesArray[0]['larger']['src'], array('alt' => $eliteModel['EliteModel']['name'])); ?></a>
 				<div class="thumbsContainer">
 					<ul>
 						<?php
 							for ($i = 0; $i < count($imagesArray); $i++) {
 								echo '<li>';
-								echo '<a href="' . $this->webroot . $eliteModel['ModelImage'][$i]['location'] . '">' . $this->Html->image($imagesArray[$i]['smaller']['src'], array('width' => $imagesArray[$i]['smaller']['w'], 'height' => $imagesArray[$i]['smaller']['h'], 'alt' => $this->webroot . 'img' . DS . $imagesArray[$i]['larger']['src'])) . '</a>';
+								echo '<a rel="prettyPhoto[pp_gal]" href="' . $this->webroot . $eliteModel['ModelImage'][$i]['location'] . '">' . $this->Html->image($imagesArray[$i]['smaller']['src'], array('width' => $imagesArray[$i]['smaller']['w'], 'height' => $imagesArray[$i]['smaller']['h'], 'alt' => $this->webroot . 'img' . DS . $imagesArray[$i]['larger']['src'])) . '</a>';
 							}
 						?>
 					</ul>

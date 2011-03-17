@@ -1,6 +1,8 @@
 <h1>Welcome <?php echo ucwords($loggedInUser['username']); ?></h1>
 
+<p class="small floatRight">Your last login was on <?php echo date('l, jS F Y g:ia', strtotime($loggedInUser['last_login'])); ?>.</p>
 <p>Below are a list of tasks and stats for Elite Model Companions</p>
+<div class="clear"></div>
 <div class="two_col_layout">
 	<div class="col1">
 		<div class="contentBox">

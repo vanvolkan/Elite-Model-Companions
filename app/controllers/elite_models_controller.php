@@ -51,12 +51,12 @@ class EliteModelsController extends AppController {
 			$this->EliteModel->set($this->data);
 			unset($this->EliteModel->ModelImage->validate['elite_model_id']);
 			if ($this->EliteModel->validates()) {
-				if ($this->data = $this->EliteModel->preSaveHandleUploads()) {
+				//if ($this->data = $this->EliteModel->preSaveHandleUploads()) {
 					if ($this->EliteModel->saveAll($this->data, array('validate' => 'first'))) {
 						$this->Session->setFlash(__('The elite model has been saved', true), 'flash_success');
 						$this->redirect(array('action' => 'index'));
 					}
-				}
+				//}
 			} else {
 				$this->Session->setFlash(__('The elite model could not be saved. Please review and fix the errors below. Note - Images will need to be readded!', true), 'flash_error');
 				$this->set('errors', $this->EliteModel->validationErrors);
@@ -70,9 +70,11 @@ class EliteModelsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			if ($this->EliteModel->save($this->data)) {
-				$this->Session->setFlash(__('The elite model has been saved', true), 'flash_success');
-				$this->redirect(array('action' => 'index'));
+			if ($this->EliteModel->checkImagesAndHandle($id, $this->data)) {
+				if ($this->EliteModel->save($this->data)) {
+					$this->Session->setFlash(__('The elite model has been saved', true), 'flash_success');
+					$this->redirect($this->referer());
+				}
 			} else {
 				$this->Session->setFlash(__('The elite model could not be saved. Please, try again.', true), 'flash_error');
 			}
@@ -80,7 +82,7 @@ class EliteModelsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->EliteModel->find('first', array(
 				'conditions'	=> array('EliteModel.id' => $id),
-				'contain'		=> array('ModelImage.location')
+				'contain'		=> array('ModelImage')
 			));
 			$this->set('eliteModel', $this->data);
 		}
