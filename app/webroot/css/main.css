@@ -409,6 +409,31 @@ ul.elite_models_list li {
 
 ul.elite_models_list li a, ul.elite_models_list li a img {
 	display: block;
+	position: relative;
+}
+
+a.eliteModel_Gold span, a.eliteModel_Platinum span, a.eliteModel_Celebrity span {
+	display: block;
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	background-color: transparent;
+	background-position: 0 0;
+}
+
+a.eliteModel_Gold span {
+	background-image: url(../img/assets/cornerBanner-GOLD.png);
+}
+
+a.eliteModel_Platinum span {
+	background-image: url(../img/assets/cornerBanner-PLATINUM.png);
+}
+
+a.eliteModel_Celebrity span {
+	background-image: url(../img/assets/cornerBanner-CELEBRITY.png);
 }
 
 ul.elite_models_list li.farRight {
