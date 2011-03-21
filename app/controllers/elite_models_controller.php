@@ -27,8 +27,14 @@ class EliteModelsController extends AppController {
 	}
 	 
 	function view($id = null) {        
-		$this->EliteModel->id = $id;        
-		$this->set('elite_model', $this->EliteModel->read());    
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid elite model', true), 'flash_error');
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->set('eliteModel', $this->EliteModel->find('first', array(
+			'conditions'	=> array('EliteModel.id' => $id),
+			'contain'		=> array('ModelImage.location')
+		)));
 	}
 
 	function admin_index() {

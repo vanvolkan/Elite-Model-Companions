@@ -257,7 +257,7 @@ div#content_page {
 	padding-top: 20px;
 }
 
-div.two_col_layout {
+div.two_col_layout, div.two_col_layout_smaller_width {
 	width: 944px;
 	overflow: hidden;
 	clear: both;
@@ -271,6 +271,17 @@ div.two_col_layout .col1 {
 
 div.two_col_layout .col2 {
 	width: 338px;
+	float: right;
+}
+
+div.two_col_layout_smaller_width .col1 {
+	width: 520px;
+	margin-right: 20px;
+	float: left;
+}
+
+div.two_col_layout_smaller_width .col2 {
+	width: 404px;
 	float: right;
 }
 
@@ -424,15 +435,15 @@ a.eliteModel_Gold span, a.eliteModel_Platinum span, a.eliteModel_Celebrity span 
 	background-position: 0 0;
 }
 
-a.eliteModel_Gold span {
+a.eliteModel_Gold span.eliteModel_Goldtag {
 	background-image: url(../img/assets/cornerBanner-GOLD.png);
 }
 
-a.eliteModel_Platinum span {
+a.eliteModel_Platinum span.eliteModel_Platinumtag {
 	background-image: url(../img/assets/cornerBanner-PLATINUM.png);
 }
 
-a.eliteModel_Celebrity span {
+a.eliteModel_Celebrity span.eliteModel_Celebritytag {
 	background-image: url(../img/assets/cornerBanner-CELEBRITY.png);
 }
 
@@ -752,9 +763,16 @@ div.tableStyleHorizontalList ul li a:hover {
 }
 
 /* Buttons */
+a.blackStandardButton, a.blackStandardButton span {
+	background-image: url(../img/assets/blackStandardButtonBG.gif);
+}
+
 a.standardButton, a.standardButton span {
-	display: block;
 	background-image: url(../img/assets/standardButtonBG.gif);
+}
+
+a.standardButton, a.standardButton span, a.blackStandardButton, a.blackStandardButton span {
+	display: block;
 	background-color: transparent;
 	font-size: 14px;
 	font-weight: bold;
@@ -764,7 +782,7 @@ a.standardButton, a.standardButton span {
 	float: left;
 }
 
-a.standardButton {
+a.standardButton, a.blackStandardButton {
 	background-position: 0 0;
 	margin: 5px 0;
 	overflow: hidden;
@@ -773,24 +791,36 @@ a.standardButton {
 	margin-left: 10px;
 }
 
-a.standardButton span {
+a.standardButton span, a.blackStandardButton span {
 	background-position: 100% -90px;
 	background-repeat: repeat-x;
 	padding: 12px 15px 0 8px;
 	margin-left: 7px;
 }
 
-a.standardButton:hover {
+a.standardButton:hover, a.blackStandardButton:hover {
 	background-position: 0 -45px;
 }
 
-a.standardButton:hover span {
+a.standardButton:hover span, a.blackStandardButton:hover span {
 	background-position: 100% -135px;
 }
 
 .formHeadingRedSpaced {
 	padding: 15px 0;
 	color: #7b011d;
+}
+
+div.bookModelButton {
+	margin: 20px auto 0;
+	width: 180px;
+	overflow: hidden;
+}
+
+div.bookModelButton a {
+	margin: 0 auto;
+	float: none;
+	text-align: center;
 }
 
 /* Table classes */
@@ -987,6 +1017,16 @@ p.small {
 	font-size: 0.95em;
 }
 
+div#modelImageFront a#heroImage, div#modelImageFront a#heroImage img {
+	margin: 0 auto;
+}
+
+div#modelImageFront a#heroImage {
+	display: block;
+	max-width: 500px;
+	width: 400px;
+	position: relative;
+}
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
 .cake-sql-log tr td {
 	background: #fff;
