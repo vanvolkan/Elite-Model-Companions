@@ -1,5 +1,5 @@
 var sifReplace = {
-  src: 'sifr.swf',
+  src: DOC_ROOT + 'sifr.swf',
   fitExactly: true,
   transparent: true,
   wmode: 'transparent',

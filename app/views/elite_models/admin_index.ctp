@@ -17,6 +17,7 @@
 				<th><?php echo $this->Paginator->sort('name');?></th>
 				<th><?php echo $this->Paginator->sort('age');?></th>
 				<th align="center"><?php echo $this->Paginator->sort('cost');?></th>
+				<th align="center"><?php echo $this->Paginator->sort('class'); ?></th>
 				<th align="center"><?php echo $this->Paginator->sort('is_featured');?></th>
 				<th class="actions"><?php __('Actions');?></th>
 		</tr>
@@ -32,6 +33,7 @@
 			<td><?php echo $this->Html->link($eliteModel['EliteModel']['name'], array('action' => 'view', $eliteModel['EliteModel']['id']), array('escape' => false)); ?></td>
 			<td><?php echo $eliteModel['EliteModel']['age']; ?>&nbsp;</td>
 			<td align="center">&#36;<?php echo $eliteModel['EliteModel']['cost']; ?>&nbsp;</td>
+			<td align="center"><?php echo (isset($eliteModel['EliteModel']['class']) && !is_null($eliteModel['EliteModel']['class'])) ? $eliteModel['EliteModel']['class'] : '&nbsp;'; ?></td>
 			<td align="center"><?php echo ($eliteModel['EliteModel']['is_featured']) ? $this->Html->image('assets/icon-tick-yes-green.png', array('alt' => 'Featured')) : $this->Html->image('assets/icon-cross-no-red.png', array('alt' => 'Not Featured')); ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link($this->Html->image('assets/icon_edit.png', array('alt' => 'Delete')), array('action' => 'edit', $eliteModel['EliteModel']['id'], 'admin' => true), array('escape' => false, 'title' => 'Edit')); ?>

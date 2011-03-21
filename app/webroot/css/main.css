@@ -686,6 +686,10 @@ div#elite_model_container img {
 	padding: 10px;
 	display: block;
 	border: 1px solid #ccc;
+	max-width: 286px;
+	overflow: hidden;
+	margin: 0 auto;
+	text-align: center; /* IE */
 }
 
 div.elite_model_info_container {

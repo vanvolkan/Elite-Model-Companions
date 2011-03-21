@@ -86,23 +86,23 @@
 			'appointment_date' => array(
 				'date'			=> array(
 					'rule'		=> array('date', 'dmy'),
-					'message'	=> 'Please enter a valid Date of Appointment'
+					'message'	=> 'Please enter a valid Date of Appointment in the format DD/MM/YYYY'
 				),
 				'maxLength'		=> array(
 					'rule'		=> array('maxLength', 10),
 					'message'	=> 'Maximum length of 10 characters for Date of Appointment'
 				)
 			),
-			'time_of_appointment' => array(
-				'notEmpty'		=> array(
-					'rule'		=> 'notEmpty',
-					'message'	=> 'Please enter your Time of Appointment'
-				),
-				'maxLength'		=> array(
-					'rule'		=> array('maxLength', 20),
-					'message'	=> 'Maximum length of 20 characters for Time of Appointment'
-				)
-			),
+			// 'time_of_appointment' => array(
+			// 	'notEmpty'		=> array(
+			// 		'rule'		=> 'notEmpty',
+			// 		'message'	=> 'Please enter your Time of Appointment'
+			// 	),
+			// 	'maxLength'		=> array(
+			// 		'rule'		=> array('maxLength', 20),
+			// 		'message'	=> 'Maximum length of 20 characters for Time of Appointment'
+			// 	)
+			// ),
 			'duration_of_appointment' => array(
 				'notEmpty'		=> array(
 					'rule'		=> 'notEmpty',
@@ -128,4 +128,26 @@
 				'message'		=> 'Please select the model you would like to book'
 			)
 		);
+		
+		public function getModelDetails($id = null)
+		{
+			if (is_null($id))
+				return false;
+				
+			$modelDetails = array();
+			$modelDetails = $this->EliteModel->find('first', array(
+		 		'conditions'		=> array('EliteModel.id' => $id),
+				'fields'			=> array('EliteModel.id', 'EliteModel.name', 'EliteModel.cost', 'EliteModel.class'),
+				'contain'			=> array('ModelImage.location')
+			));
+			
+			return (empty($modelDetails)) ? false : $modelDetails;
+		}
+		
+		public function beforeSave()
+		{
+			$this->data['Booking']['time_of_appointment'] = $this->data['Booking']['time_of_appointment']['hour'] . ':' . $this->data['Booking']['time_of_appointment']['min'] . ' ' . $this->data['Booking']['time_of_appointment']['meridian'];
+
+			return true;
+		}
 	}

@@ -32,15 +32,17 @@
 					echo $this->Form->input('first_name', array('First Name:'));
 					echo $this->Form->input('last_name', array('Last Name:'));
 					echo $this->Form->input('email_address', array('Email address:'));
-					$date = date("d-m-Y");
-					$minus100years = strtotime("-100 year", strtotime($date));
-					$minus30years = strtotime("-30 year", strtotime($date));
-					echo $this->Html->tag('div', $this->Form->label('dobDay', 'Date of Birth:') . $this->Form->day('dobDay', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->month('dobMonth', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->year('dobYear', date("Y", $minus100years), date('Y'), date("Y", $minus30years), array('empty' => false)), array('class' => 'input text'));
+					// $date = date("d-m-Y");
+					// 					$minus100years = strtotime("-100 year", strtotime($date));
+					// 					$minus30years = strtotime("-30 year", strtotime($date));
+					// 					echo $this->Html->tag('div', $this->Form->label('dobDay', 'Date of Birth:') . $this->Form->day('date_of_birth', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->month('date_of_birth', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->year('date_of_birth', date("Y", $minus100years), date('Y'), date("Y", $minus30years), array('empty' => false)), array('class' => 'input text'));
+					echo $this->Form->input('date_of_birth', array('label' => 'Date of Birth:', 'class' => 'datePicker'));
 					echo $this->Form->input('contact_number', array('label' => 'Contact Number:'));
 					echo $this->Form->input('city_of_appointment', array('label' => 'City/Suburb of Appointment:'));
-					$plus1year = strtotime("+1 year", strtotime($date));
-					echo $this->Html->tag('div', $this->Form->label('appointmentDay', 'Appointment Date:') . $this->Form->day('appointmentDay', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->month('appointmentMonth', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->year('appointmentYear', date("Y"), date('Y', $plus1year), date("Y"), array('empty' => false)), array('class' => 'input text'));
-					echo $this->Html->tag('div', $this->Form->label('appointmentHour', 'Time of Appointment:') . $this->Form->hour('appointmentHour', false, '', array('empty' => false, 'class' => 'floatLeft')) . '<span class="floatLeft"> : </span>' .  $this->Form->minute('appointmentMinute', '', array('empty' => false, 'class' => 'floatLeft')) . $this->Form->meridian('appointmentMeridian', '', array('empty' => false)), array('class' => 'input text'));
+					//$plus1year = strtotime("+1 year", strtotime($date));
+					// echo $this->Html->tag('div', $this->Form->label('appointmentDay', 'Appointment Date:') . $this->Form->day('appointmentDay', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->month('appointmentMonth', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->year('appointmentYear', date("Y"), date('Y', $plus1year), date("Y"), array('empty' => false)), array('class' => 'input text'));
+					echo $this->Form->input('appointment_date', array('label' => 'Appointment Date:', 'class' => 'datePicker'));
+					echo $this->Html->tag('div', $this->Form->label('TimeOfAppointmentHour', 'Time of Appointment:') . $this->Form->hour('time_of_appointment', false, '', array('empty' => false, 'class' => 'floatLeft')) . '<span class="floatLeft"> : </span>' .  $this->Form->minute('time_of_appointment', '', array('empty' => false, 'class' => 'floatLeft')) . $this->Form->meridian('time_of_appointment', '', array('empty' => false)), array('class' => 'input text'));
 					echo $this->Form->input('duration_of_appointment', array('label' => 'Duration of Appointment:'));
 					echo $this->Html->tag('h2', 'If you are staying in a Hotel:', array('class' => 'employmentHotelHeading'));
 					echo $this->Form->input('hotel_name', array('Hotel Name:'));
@@ -48,7 +50,7 @@
 						'Yes'	=> 'Yes',
 						'No'	=> 'No'
 					);
-					echo $this->Html->tag('div', $this->Form->label('hotel_reserved', 'Is your Hotel reservation confirmed?:') . $this->Form->select('hotel_reserved', $options, '', array('empty' => false)), array('class' => 'input text'));
+					echo $this->Html->tag('div', $this->Form->label('hotel_reserved', 'Is your Hotel reservation confirmed?:') . $this->Form->select('hotel_reserved', $options, ''), array('class' => 'input text'));
 					$options = array(
 						'Yellow Pages Online'		=> 'Yellow Pages Online',
 						'Newspaper'					=> 'Newspaper',
@@ -69,11 +71,13 @@
 					<div id="elite_model_container" <?php echo (!isset($modelBooking)) ? 'style="display: none;"' : ''; ?>>
 					<?php
 						if (isset($modelBooking)):
+							$modelImage = isset($modelBooking['ModelImage'][0]['location']) ? $modelBooking['ModelImage'][0]['location'] : '';
+							
 							$thumbnail = $phpthumb->generate(array(
 								'save_path'			=> WWW_ROOT . 'img/models/thumbs',
 								'display_path'		=> 'models/thumbs',
 								'error_image_path'	=> 'models/error.jpg',
-								'src'				=> 'img/' . $modelBooking['ModelImage'][0]['location'],
+								'src'				=> $modelImage,
 								'w'					=> 286,
 								'q'					=> 100,
 								'zc'				=> 1
@@ -83,8 +87,17 @@
 					?>
 						<div class="elite_model_info_container">
 							<h3><?php echo $modelBooking['EliteModel']['name']; ?></h3>
-							<p>&#36;<?php echo $modelBooking['EliteModel']['cost']; ?> per hour</p>
+							<p>&#36;<span><?php echo $modelBooking['EliteModel']['cost']; ?></span> per hour</p>
 						</div>
+					<?php
+						else:
+						// Add empty tags
+					?>
+					<img />
+					<div class="elite_model_info_container">
+						<h3></h3>
+						<p>&#36;<span></span> per hour</p>
+					</div>
 					<?php
 						endif;
 					?>
@@ -97,16 +110,50 @@
 		?>
 		<script>
 			$(function() {
+				$.datepicker.setDefaults({
+					showOn: "both",
+					buttonImageOnly: true,
+					buttonImage: "<?php echo $this->webroot; ?>img/assets/calendar.gif",
+					buttonText: 'Calendar',
+					dateFormat: 'dd/mm/yy'
+				});
+				
+				$('.datePicker').datepicker({
+					showButtonPanel: true,
+					changeMonth: true,
+					changeYear: true
+				});
+				
+				$('#BookingDateOfBirth').datepicker("option", "yearRange", "c-80:c+2");
+				
+				$('#BookingAppointmentDate').datepicker("option", "minDate", '0');
+				
 				$('#BookingEliteModelId').bind('change', function(evt) {
 					evt.preventDefault();
 					evt.stopPropagation();
 					
+					var selected = $(this).val();
+					
 					$.ajax({
-						type : "POST",
-						url : "<?php echo $this->Html->url(array('controller' => 'bookings', 'action' => 'book')); ?>/" + $(this).val() + "",
-						dataType : "json",
+						type: "POST",
+						url: $('#BookingBookForm').attr('action') + '/' + selected,
+						dataType: "json",
 						success: function(data) {
-							$('#elite_model_container').html(data);
+							var updateSection = $('#elite_model_container');
+							var imgToUpdate = updateSection.find('img');
+							var infoContainer = $('div.elite_model_info_container');
+							
+							updateSection.fadeOut('fast', function() {
+								if (data.location)
+									var imgTag = '<img src="<?php echo $this->webroot; ?>' + data.location + '" alt="' + data.name + '" />';
+								else
+									var imgTag = '<img src="<?php echo $this->webroot; ?>' + error_image_path + '" alt="' + data.name + '" />';
+
+								imgToUpdate.replaceWith(imgTag);
+								
+								infoContainer.find('h3').text(data.name);
+								infoContainer.find('p span').text(data.cost);
+							}).fadeIn('medium');
 						}
 					})
 				});
