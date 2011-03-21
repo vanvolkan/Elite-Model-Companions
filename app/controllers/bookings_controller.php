@@ -34,8 +34,7 @@
 				$this->Booking->set($this->data);
 				if ($this->Booking->validates()) {
 					// Time to email the details
-				//	$this->Email->to = Configure::read('eliteModelsOwner');
-					$this->Email->to = 'slavlazar@gmail.com';
+					$this->Email->to = Configure::read('eliteModelsOwner');
 					$this->Email->bcc = Configure::read('eliteModelsAdmins');
 					$this->Email->subject = 'New booking submission by ' . $this->data['Booking']['first_name'] . ' ' . $this->data['Booking']['last_name'];
 		            $this->Email->from = $this->data['Booking']['email_address'];
@@ -52,6 +51,7 @@
 					$this->set('submitted', 'Thank you for your booking enquiry. We will be in contact with you shortly.');
 					unset($this->data['Booking']);
 					$this->Session->setFlash(__('No errors occurred during submission', true), 'flash_success');
+					$this->data = array();
 				} else {
 					$this->Session->setFlash(__('Errors occured during submission. Please review and fix the errors below.', true), 'flash_error');
 					$modelBooking = $this->Booking->getModelDetails($this->data['Booking']['elite_model_id']);
