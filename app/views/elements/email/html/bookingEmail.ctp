@@ -15,10 +15,6 @@
 		<td><?php echo $Booking['Booking']['email_address']; ?></td>
 	</tr>
 	<tr>
-		<td><b>Date of Birth:</b></td>
-		<td><?php echo $Booking['Booking']['date_of_birth']; ?></td>
-	</tr>
-	<tr>
 		<td><b>Contact Number:</b></td>
 		<td><?php echo $Booking['Booking']['contact_number']; ?></td>
 	</tr>

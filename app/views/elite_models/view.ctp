@@ -15,8 +15,8 @@
 						'display_path'		=> 'img/models/thumbs',
 						'error_image_path'	=> 'models/error.jpg',
 						'src'				=> $src,
-						'w'					=> 110,
-						'h'					=> 100,
+						'w'					=> 111,
+						'h'					=> 75,
 						'q'					=> 100,
 						'zc'				=> 1
 					));
@@ -30,6 +30,9 @@
 						'q'					=> 100,
 						'zc'				=> 1
 					));
+					
+					$thumbnail['__original__'] = $src;
+					$thumbnailLarger['__original__'] = $src;
 				
 					$imagesArray[] = array('smaller' => $thumbnail, 'larger' => $thumbnailLarger);
 				}
@@ -45,6 +48,22 @@
 				<span class="<?php echo $class; ?>tag"></span>
 				<img src="<?php echo $this->webroot . $imgThumbURL; ?>" alt="<?php echo $eliteModel['EliteModel']['name']; ?>" />
 			</a>
+			
+			<?php if (count($imagesArray) > 0): ?>
+			<div id="modelImageGalleryContainer">
+				<div class="scrollingHotSpotLeft"></div>
+				<div class="scrollingHotSpotRight"></div>
+				<div class="scrollWrapper">
+					<div class="scrollableArea">
+						<?php 
+							echo $this->Html->script('jquery.smoothDivScroll-1.1-min', array('inline' => false));
+							foreach ($imagesArray as $imgSmallerThumb): ?>
+							<a href="<?php echo $this->webroot . $imgSmallerThumb['smaller']['__original__']; ?>" rel="prettyPhoto[pp_gal]"><img src="<?php echo $this->webroot . $imgSmallerThumb['smaller']['src']; ?>" alt="<?php echo $this->webroot . $imgSmallerThumb['larger']['src']; ?>" width="<?php echo $imgSmallerThumb['smaller']['w']; ?>" height="<?php echo $imgSmallerThumb['smaller']['h']; ?>" /></a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div class="col2">
@@ -84,4 +103,31 @@
 		</div>
 	</div>
 </div>
-<?php echo $eliteModel['EliteModel']['description']; ?>
+<div class="modelDescriptionContainer">
+	<h2 class="hReplaced_red">A bit about <?php echo $eliteModel['EliteModel']['name']; ?></h2>
+	<?php echo $eliteModel['EliteModel']['description']; ?>
+</div>
+
+<script>
+	$(window).load(function() { 
+		$('#modelImageGalleryContainer').smoothDivScroll({
+			scrollStep: 10, 
+			scrollInterval: 5, 
+			visibleHotSpots: "always"
+		});
+		
+		$('#modelImageGalleryContainer a').hover(function() {
+			var heroIMGLink = $('a#heroImage');
+			var heroIMG = heroIMGLink.find('img');
+			var hoverIMGLink = $(this);
+			var hoverIMG = hoverIMGLink.find('img');
+			
+			heroIMGLink.attr('href', hoverIMGLink.attr('href'));
+			heroIMG.attr('src', hoverIMG.attr('alt'));
+		}, function() {
+			return;
+		}).click(function() {
+			return false;
+		});
+	});
+</script>

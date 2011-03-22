@@ -53,16 +53,6 @@
 					'message'	=> 'Maximum length of 100 characters for Email Address'
 				)
 			),
-			'date_of_birth'	=> array(
-				'date'			=> array(
-					'rule'		=> array('date', 'dmy'),
-					'message'	=> 'Please enter a valid Date of Birth'
-				),
-				'maxLength'		=> array(
-					'rule'		=> array('maxLength', 10),
-					'message'	=> 'Maximum length of 10 characters for Date of Birth'
-				)
-			),
 			'contact_number' => array(
 				'notEmpty'		=> array(
 					'rule'		=> 'notEmpty',

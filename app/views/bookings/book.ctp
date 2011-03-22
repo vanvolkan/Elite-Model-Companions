@@ -36,7 +36,6 @@
 					// 					$minus100years = strtotime("-100 year", strtotime($date));
 					// 					$minus30years = strtotime("-30 year", strtotime($date));
 					// 					echo $this->Html->tag('div', $this->Form->label('dobDay', 'Date of Birth:') . $this->Form->day('date_of_birth', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->month('date_of_birth', '', array('class' => 'floatLeft', 'empty' => false)) . $this->Form->year('date_of_birth', date("Y", $minus100years), date('Y'), date("Y", $minus30years), array('empty' => false)), array('class' => 'input text'));
-					echo $this->Form->input('date_of_birth', array('label' => 'Date of Birth:', 'class' => 'datePicker'));
 					echo $this->Form->input('contact_number', array('label' => 'Contact Number:'));
 					echo $this->Form->input('city_of_appointment', array('label' => 'City/Suburb of Appointment:'));
 					//$plus1year = strtotime("+1 year", strtotime($date));
@@ -123,9 +122,7 @@
 					changeMonth: true,
 					changeYear: true
 				});
-				
-				$('#BookingDateOfBirth').datepicker("option", "yearRange", "c-80:c+2");
-				
+								
 				$('#BookingAppointmentDate').datepicker("option", "minDate", '0');
 				
 				$('#BookingEliteModelId').bind('change', function(evt) {

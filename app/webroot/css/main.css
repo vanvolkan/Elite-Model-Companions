@@ -1027,6 +1027,91 @@ div#modelImageFront a#heroImage {
 	width: 400px;
 	position: relative;
 }
+
+div#modelImageGalleryContainer {
+	margin: 8px 0 25px;
+	width: 520px;
+	padding: 0;
+	height: 75px;
+	position: relative;
+	background-color: #FFF;
+}
+
+/* Invisible scrolling hotspot */
+div.scrollingHotSpotLeft, div.scrollingHotSpotRight {
+	width: 38px;
+	height: 75px;
+	position: absolute;
+	z-index: 200;
+}
+
+div.scrollingHotSpotLeft {
+	left: 0;
+}
+
+div.scrollingHotSpotRight {
+	right: 0;
+}
+
+/* Visible left hotspot */
+div.scrollingHotSpotLeftVisible, div.scrollingHotSpotRightVisible {
+	background-image: url(../img/assets/imgSliderArrows.gif);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	zoom: 1;
+}
+
+div.scrollingHotSpotLeftVisible {
+	background-position: 0 0;
+}
+
+div.scrollingHotSpotRightVisible {
+	background-position: -38px 0;
+}
+
+div.scrollingHotSpotLeftVisible:hover {
+	background-position: 0 -75px;
+}
+
+div.scrollingHotSpotRightVisible:hover {
+	background-position: -38px -75px;
+}
+
+/* The scroll wrapper is always the same width and height as the containing element (div).
+   Overflow is hidden because you don't want to show all of the scrollable area.
+*/
+div.scrollWrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+div.scrollableArea {
+	position: relative;
+	width: auto;
+	height: 100%;
+}
+
+div#modelImageGalleryContainer div.scrollableArea * {
+	position: relative;
+	display: block;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+div.modelDescriptionContainer {
+	font-size: 1.2em;
+	padding: 20px;
+	margin: 0 0 5px;
+	background-color: #f7f7f7;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	border: 1px solid #eee;
+}
+
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
 .cake-sql-log tr td {
 	background: #fff;
