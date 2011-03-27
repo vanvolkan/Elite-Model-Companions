@@ -423,7 +423,7 @@ ul.elite_models_list li a, ul.elite_models_list li a img {
 	position: relative;
 }
 
-a.eliteModel_Gold span, a.eliteModel_Platinum span, a.eliteModel_Celebrity span {
+span.eliteModel_Goldtag, span.eliteModel_Platinumtag, span.eliteModel_Celebritytag {
 	display: block;
 	position: absolute;
 	top: -6px;
@@ -435,15 +435,15 @@ a.eliteModel_Gold span, a.eliteModel_Platinum span, a.eliteModel_Celebrity span 
 	background-position: 0 0;
 }
 
-a.eliteModel_Gold span.eliteModel_Goldtag {
+span.eliteModel_Goldtag {
 	background-image: url(../img/assets/cornerBanner-GOLD.png);
 }
 
-a.eliteModel_Platinum span.eliteModel_Platinumtag {
+span.eliteModel_Platinumtag {
 	background-image: url(../img/assets/cornerBanner-PLATINUM.png);
 }
 
-a.eliteModel_Celebrity span.eliteModel_Celebritytag {
+span.eliteModel_Celebritytag {
 	background-image: url(../img/assets/cornerBanner-CELEBRITY.png);
 }
 
@@ -1149,6 +1149,66 @@ input.smallIntInput {
 	width: 30px;
 	text-align: center;
 	padding: 2px;
+}
+
+/* Rates styles */
+div.roundedRates {
+	position: relative;
+	margin: 10px 0 20px;
+	min-height: 140px;
+	background-color: #f7f7f7;
+	border: 1px solid #eee;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+div.roundedRates div {
+	padding: 20px 60px 20px 20px;
+}
+
+div.roundedRates div h2 {
+	text-align: center;
+	font-size: 24px;
+	padding-bottom: 20px;
+	color: #7b011d;
+	font-weight: bold;
+}
+
+div.roundedRates div p {
+	padding-bottom: 20px;
+}
+
+/* Guide styles */
+div.standOut {
+	margin: 10px 0;
+	background: #e7e7e7 url(../img/assets/exclamation_icon.jpg) no-repeat 5px 50%;
+	border: 1px solid #CCC;
+	padding: 20px;
+}
+
+div.standOut h3 {
+	color: #4b4b4b;
+	padding-left: 55px;
+}
+
+h3.beforeBooking {
+	padding: 18px 0 5px;
+	font-weight: bold;
+	color: #7b011d;
+	font-size: 18px;
+}
+
+h3.contentSubHeading {
+	font-size: 16px;
+	padding: 24px 0 0;
+	color: #3d3d3d;
+}
+
+h3.emphasized {
+	font-weight: bold;
+	color: #242424;
+	font-size: 17px;
 }
 
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */

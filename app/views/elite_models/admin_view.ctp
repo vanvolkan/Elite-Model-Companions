@@ -104,6 +104,12 @@
 					<th>Viewed:</th>
 					<td><?php echo $eliteModel['EliteModel']['viewed']; ?> <?php echo ($eliteModel['EliteModel']['viewed'] == 1) ? 'time' : 'times'; ?></td>
 				</tr>
+				<?php if (!is_null($eliteModel['EliteModel']['rank'])): ?>
+				<tr>
+					<th>Rank:</th>
+					<td><?php echo $eliteModel['EliteModel']['rank']; ?></td>
+				</tr>
+				<?php endif; ?>
 			</tbody>
 		</table>
 	</div>

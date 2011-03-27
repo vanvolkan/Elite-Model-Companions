@@ -26,7 +26,7 @@
 
 		<?php
 			
-			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.11.custom.min', 'siteWideFunctions', 'jquery.prettyPhoto', 'disableRClick'));
+			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.11.custom.min', 'siteWideFunctions', 'jquery.prettyPhoto'));
 			
 			echo $scripts_for_layout;
 		?>

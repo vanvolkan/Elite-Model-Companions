@@ -26,6 +26,7 @@
 			echo $this->Form->input('eye_colour', array('label' => 'Eye Colour:'));
 			echo $this->Form->input('cost', array('label' => 'Cost:'));
 			echo $this->Form->input('description', array('label' => 'Description:'));
+			echo $this->Form->input('rank', array('label' => 'Rank:'));
 			echo $this->Form->input('is_featured', array('label' => 'Is Featured?:'));
 			echo $this->Html->tag('h2', 'Model Images', array('class' => 'formHeadingRedSpaced'));
 		?>

@@ -4,7 +4,7 @@ class EliteModelsController extends AppController {
 
 	var $name = 'EliteModels';
 	var $helpers = array('Phpthumb');
-	var $paginate = array('order' => array('EliteModel.rank' => 'asc', 'EliteModel.name' => 'asc'));
+	var $paginate = array('order' => array('EliteModel.rank' => 'asc', 'EliteModel.id' => 'desc'));
 	
 	function index() {
 		if (isset($this->params['requested'])) {
@@ -25,7 +25,7 @@ class EliteModelsController extends AppController {
 		} else
 			$this->set('elite_models', $this->EliteModel->find('all', array(
 				'contain'		=> array('ModelImage.location'),
-				'order'			=> array('EliteModel.rank' => 'asc', 'EliteModel.name' => 'asc')
+				'order'			=> array('EliteModel.rank' => 'asc', 'EliteModel.id' => 'desc')
 			)));
 	}
 	 

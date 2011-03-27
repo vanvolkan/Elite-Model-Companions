@@ -10,27 +10,29 @@
 			co-coordinator is not comfortable talking with you, she will be unlikely to send one of her 
 			models to visit you.</p>
 	
-		<h3 class="guide">NEVER HAGGLE OVER CHARGES</h3>
-
+		<div class="standOut">
+			<h3 class="guide">NEVER HAGGLE OVER CHARGES</h3>
+		</div>
+		
 		<p class="guide">If our prices are too high, then there is nothing wrong with saying that the price is beyond
 			 what you had in mind, thank our co-coordinator for her time and then move on. Politeness 
 			costs nothing. Trying to negotiate fees will result in less polite treatment, or exclusion 
 			from our agency.</p>
 	
-		<p class="guide"><b>Before the booking...</b></p>
+		<h3 class="beforeBooking">Before the booking...</h3>
 
-		<p class="guide"><i>Cleanliness</i></p>
+		<h3 class="contentSubHeading">Cleanliness</h3>
 		<p class="guide">Be a gentleman if you expect her to stay.  This includes a clean towel, clean sheets, clean 
 			glasses for drinks, and most importantly – clean YOU! You’ll see how much more… giving she is, 
 			when your body is clean.</p>
 	
-		<p class="guide"><i>Money</i></p>
+		<h3 class="contentSubHeading">Money</h3>
 		<p class="guide">Have the payment ready in cash, unless otherwise agreed, and counted. You have already found 
 			out how much it is going to cost, so to spare both of you any embarrassment; make sure the 
 			amount is correct and place it in an envelope or separate from the rest of your money. When the 
 			model suggests payment be made, hand it to her. </p>
 	
-		<p class="guide"><b>Together at last...</b></p>
+		<h3 class="contentSubHeading emphasized">Together at last...</h3>
 		<p class="guide">Be courteous. Offer her a drink... engage in a little conversation, treat her like a lady.</p>
 		<p class="guide">Be a gentleman if you expect her to stay.  This includes a clean towel, clean sheets and clean glasses for drinks.</p>
 	</div>
