@@ -1,5 +1,5 @@
 <h1 class="hReplaced_red">Employment</h1>
-<p>Attractive staffs between the ages of 18-30, of all nationalities are required for high class escort work in Newcastle, the Central Coast and Sydney areas.</p>
+<p>Attractive staffs between the ages of 18-30, of all nationalities are required for high class escort work in Newcastle, Central Coast and Sydney areas.</p>
 <p>We are a leading escort agency and have some of the highest rates in the industry, hence the opportunity exists to earn a very high income in a discrete, luxurious and executive environment. We offer an excellent environment for high class ladies and models to make unbelievable money – most models make more than court barristers make in a year!  You will meet and entertain some very interesting and successful gentlemen with the opportunity of experiencing 5 star hotels and restaurants and even accompanying our clients on national and international travel.</p>
 <p>Discretion and confidentiality for both the women of Elite Model Companions and our clients is extremely important and we take it very seriously. All our clients undergo a screening process before a booking.</p>
 <p>To apply as a high class escort you must be extremely attractive, illegal-drug free, body-pierce and scar free, warm and friendly, immaculately groomed, confident but polite, and of course, very sexually passionate and free.  You cannot assist a refined man in sensuality if you do not even know your own body or enjoy your own sexuality.</p>
@@ -33,7 +33,7 @@
 			echo $this->Form->input('dress_size', array('label' => 'Dress Size:'));
 			echo $this->Form->input('shoe_size', array('label' => 'Shoe Size:'));
 			echo $this->Form->input('bust_size', array('label' => 'Bust Size:'));
-			echo $this->Form->input('natural', array('label' => 'Naturual?', 'options' => array('Yes' => 'Yes', 'No' => 'No')));
+			echo $this->Form->input('natural', array('label' => 'Natural?', 'options' => array('Yes' => 'Yes', 'No' => 'No')));
 			echo $this->Form->input('waist', array('label' => 'Waist:'));
 			echo $this->Form->input('hips', array('label' => 'Hips:'));
 			echo $this->Form->input('hair_colour', array('label' => 'Hair Colour:'));

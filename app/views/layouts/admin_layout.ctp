@@ -17,7 +17,12 @@
 			echo $this->Html->meta('icon');
 				
 			echo $this->Html->css(array('main', 'sifr', 'jquery-ui-1.8.11.custom', 'prettyPhoto'));
-			
+		?>
+			<script>
+				var error_image_path = 'models/error.jpg';
+				var DOC_ROOT = '<?php echo $this->webroot; ?>';
+			</script>
+		<?php	
 			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.11.custom.min', 'siteWideFunctions', 'jquery.prettyPhoto'));
 			
 			echo $scripts_for_layout;
@@ -26,11 +31,6 @@
 		<!--[if lte IE 6]>
 			<?php echo $this->Html->script('supersleight-min'); ?>
 		<![endif]-->
-		
-		<script>
-			var error_image_path = 'models/error.jpg';
-			var DOC_ROOT = '<?php echo $this->webroot; ?>';
-		</script>
 	</head>
 	<body>
 		<div id="wrapper">

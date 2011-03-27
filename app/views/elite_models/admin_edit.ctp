@@ -19,6 +19,7 @@
 			echo $this->Form->input('cost');
 			echo $this->Form->input('description');
 			echo $this->Form->input('is_featured');
+			echo $this->Form->input('rank');
 			
 			$currentImages = $eliteModel['ModelImage'];
 			$count = count($currentImages);

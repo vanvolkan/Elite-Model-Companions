@@ -100,6 +100,10 @@
 					<th>Featured?:</th>
 					<td><?php echo ($eliteModel['EliteModel']['is_featured']) ? $this->Html->image('assets/icon-tick-yes-green.png', array('alt' => 'Featured')) : $this->Html->image('assets/icon-cross-no-red.png', array('alt' => 'Not Featured')); ?></td>
 				</tr>
+				<tr>
+					<th>Viewed:</th>
+					<td><?php echo $eliteModel['EliteModel']['viewed']; ?> <?php echo ($eliteModel['EliteModel']['viewed'] == 1) ? 'time' : 'times'; ?></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

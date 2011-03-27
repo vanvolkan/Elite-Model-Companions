@@ -121,6 +121,13 @@ class EliteModel extends AppModel {
 				'rule'		=> 'numeric',
 				'message'	=> 'Invalid input for cost - Only numeric characters allowed. Please try again'
 			)
+		),
+		'rank'	=> array(
+			'numeric'		=> array(
+				'rule'			=> 'numeric',
+				'required'		=> false,
+				'allowEmpty'	=> true
+			)
 		)
 	);
 	
@@ -199,28 +206,39 @@ class EliteModel extends AppModel {
 		return true;
 	}
 	*/
+	
+	public function UpdateHits($id)
+	{
+		if (!preg_match('/\d+/', $id))
+			return false;
+		
+		$fieldToInc = 'viewed';
+		$this->updateAll(array('EliteModel.' . $fieldToInc => 'EliteModel.' . $fieldToInc . '+1'), array('EliteModel.id' => $id));
+	}
 
 	public function beforeSave()
 	{
-		// Set the class of the model
-		$classes = array(
-			'Gold'		=> array('min' => 500, 'max' => 800),
-			'Platinum'	=> array('min' => 801, 'max' => 1500),
-			'Celebrity'	=> array('min' => 1501, 'max' => 10000)
-		);
+		if (isset($this->data['EliteModel']['cost'])) {
+			// Set the class of the model
+			$classes = array(
+				'Gold'		=> array('min' => 500, 'max' => 800),
+				'Platinum'	=> array('min' => 801, 'max' => 1500),
+				'Celebrity'	=> array('min' => 1501, 'max' => 10000)
+			);
 		
-		$cost = $this->data['EliteModel']['cost'];
-		$modelClass = '';
+			$cost = $this->data['EliteModel']['cost'];
+			$modelClass = '';
 		
-		foreach ($classes as $class => $prices) {
-			if ($cost >= $prices['min'] && $cost <= $prices['max']) {
-				$modelClass = $class;
-				break;
+			foreach ($classes as $class => $prices) {
+				if ($cost >= $prices['min'] && $cost <= $prices['max']) {
+					$modelClass = $class;
+					break;
+				}
 			}
-		}
 		
-		if ($modelClass !== '')
-			$this->data['EliteModel']['class'] = $modelClass;
+			if ($modelClass !== '')
+				$this->data['EliteModel']['class'] = $modelClass;
+		}
 		
 		return true;
 	}

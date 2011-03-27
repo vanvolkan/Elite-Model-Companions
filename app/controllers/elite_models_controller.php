@@ -1,8 +1,10 @@
 <?php
+App::import('Sanitize');
 class EliteModelsController extends AppController {
 
 	var $name = 'EliteModels';
 	var $helpers = array('Phpthumb');
+	var $paginate = array('order' => array('EliteModel.rank' => 'asc', 'EliteModel.name' => 'asc'));
 	
 	function index() {
 		if (isset($this->params['requested'])) {
@@ -22,7 +24,8 @@ class EliteModelsController extends AppController {
 			return $featuredModel;
 		} else
 			$this->set('elite_models', $this->EliteModel->find('all', array(
-				'contain'		=> array('ModelImage.location')
+				'contain'		=> array('ModelImage.location'),
+				'order'			=> array('EliteModel.rank' => 'asc', 'EliteModel.name' => 'asc')
 			)));
 	}
 	 
@@ -31,6 +34,7 @@ class EliteModelsController extends AppController {
 			$this->Session->setFlash(__('Invalid elite model', true), 'flash_error');
 			$this->redirect(array('action' => 'index'));
 		}
+		$this->EliteModel->UpdateHits($id);
 		$this->set('eliteModel', $this->EliteModel->find('first', array(
 			'conditions'	=> array('EliteModel.id' => $id),
 			'contain'		=> array('ModelImage.location')
@@ -38,6 +42,19 @@ class EliteModelsController extends AppController {
 	}
 
 	function admin_index() {
+		if ($this->RequestHandler->isAjax()) {
+			$this->view = 'Json';
+			$model = array();
+			foreach ($_POST['data'] as $key => $val) {
+				$this->EliteModel->id = $val['id'];
+				$this->EliteModel->saveField('rank', Sanitize::clean($val['rank']));
+			}
+			
+			$json = array(
+				'status'	=> 1
+			);
+			$this->set(compact('json'));
+		}
 		$this->set('eliteModels', $this->paginate());
 	}
 

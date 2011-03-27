@@ -607,7 +607,7 @@ div.siteForm input, div.siteForm textarea {
 	background-color: #FFF;
 }
 
-div.siteForm div.submit input {
+div.siteForm div.submit input, div.submitButtonRed input {
 	width: 131px;
 	height: 37px;
 	overflow: hidden;
@@ -621,8 +621,12 @@ div.siteForm div.submit input {
 	float: right;
 }
 
-div.siteForm div.submit input:hover {
+div.siteForm div.submit input:hover, div.submitButtonRed input:hover {
 	background-position: 0 -38px;
+}
+
+div.updateRankBtn {
+	padding-right: 90px;
 }
 
 div.input {
@@ -813,7 +817,7 @@ a.standardButton:hover span, a.blackStandardButton:hover span {
 
 div.bookModelButton {
 	margin: 20px auto 0;
-	width: 180px;
+	width: 160px;
 	overflow: hidden;
 }
 
@@ -824,6 +828,10 @@ div.bookModelButton a {
 }
 
 /* Table classes */
+table#modelDetailsTable {
+	width: 364px;
+}
+
 table.standardTableClass {
 	width: 100%;
 	border: none;
@@ -1017,7 +1025,16 @@ p.small {
 	font-size: 0.95em;
 }
 
-div#modelImageFront a#heroImage, div#modelImageFront a#heroImage img {
+div#heroImageContainer {
+	padding: 20px 0 0 0;
+}
+
+div#modelImageFrontContainer {
+	width: 500px;
+}
+
+div#modelImageFront {
+	width: 400px;
 	margin: 0 auto;
 }
 
@@ -1026,15 +1043,31 @@ div#modelImageFront a#heroImage {
 	max-width: 500px;
 	width: 400px;
 	position: relative;
+	float: right;
 }
 
 div#modelImageGalleryContainer {
-	margin: 8px 0 25px;
+	margin: 0 0 10px;
 	width: 520px;
 	padding: 0;
 	height: 75px;
 	position: relative;
 	background-color: #FFF;
+}
+
+div#modelIMGGallery a.farLeft {
+	padding-left: 0;
+}
+
+div#modelIMGGallery a {
+	display: block;
+	float: left;
+	padding-left: 4px;
+}
+
+span.eliteModelCost {
+	font-weight: bold;
+	font-size: 1.1em;
 }
 
 /* Invisible scrolling hotspot */
@@ -1104,12 +1137,18 @@ div#modelImageGalleryContainer div.scrollableArea * {
 div.modelDescriptionContainer {
 	font-size: 1.2em;
 	padding: 20px;
-	margin: 0 0 5px;
+	margin: 15px 0 5px;
 	background-color: #f7f7f7;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
 	border: 1px solid #eee;
+}
+
+input.smallIntInput {
+	width: 30px;
+	text-align: center;
+	padding: 2px;
 }
 
 /* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
