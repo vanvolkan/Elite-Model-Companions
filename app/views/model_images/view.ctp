@@ -8,7 +8,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Elite Model'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($modelImage['EliteModel']['name'], array('controller' => 'elite_models', 'action' => 'view', $modelImage['EliteModel']['id'])); ?>
+			<?php echo $this->Html->link($modelImage['EliteModel']['name'], array('controller' => 'elite_models', 'action' => 'view', $modelImage['EliteModel']['slug'])); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Location'); ?></dt>

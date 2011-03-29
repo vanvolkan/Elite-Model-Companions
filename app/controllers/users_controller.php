@@ -19,8 +19,9 @@
 			$contactCount = $this->Contact->find('count');
 			$bookingCount = $this->Booking->find('count');
 			$loggedInUser = $this->Session->read('Auth.User');
+			$page_for_layout = 'users_item';
 			
-			$this->set(compact('eliteModelCount', 'employmentCount', 'contactCount', 'bookingCount', 'loggedInUser'));
+			$this->set(compact('eliteModelCount', 'employmentCount', 'contactCount', 'bookingCount', 'loggedInUser', 'page_for_layout'));
 			
 		}
 		
@@ -55,6 +56,7 @@
 			}
 			
 			$this->set('loggedInUser', $this->Session->read('Auth.User'));
+			$this->set('page_for_layout', 'users_changePassword_item');
 		}
 		
 		public function beforeFilter()

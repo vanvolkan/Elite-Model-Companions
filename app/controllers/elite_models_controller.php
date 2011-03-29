@@ -27,18 +27,23 @@ class EliteModelsController extends AppController {
 				'contain'		=> array('ModelImage.location'),
 				'order'			=> array('EliteModel.rank' => 'asc', 'EliteModel.id' => 'desc')
 			)));
+		
+		$this->set('page_for_layout', 'elite_models_item');
 	}
 	 
-	function view($id = null) {        
-		if (!$id) {
+	function view($slug = null) {        
+		if (!$slug) {
 			$this->Session->setFlash(__('Invalid elite model', true), 'flash_error');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->EliteModel->UpdateHits($id);
-		$this->set('eliteModel', $this->EliteModel->find('first', array(
-			'conditions'	=> array('EliteModel.id' => $id),
+		$this->EliteModel->UpdateHits($slug);
+		$page_for_layout = 'elite_models_item';
+		$eliteModel = $this->EliteModel->find('first', array(
+			'conditions'	=> array('EliteModel.slug' => $slug),
 			'contain'		=> array('ModelImage.location')
-		)));
+		));
+		
+		$this->set(compact('page_for_layout', 'eliteModel'));
 	}
 
 	function admin_index() {
@@ -56,6 +61,7 @@ class EliteModelsController extends AppController {
 			$this->set(compact('json'));
 		}
 		$this->set('eliteModels', $this->paginate());
+		$this->set('page_for_layout', 'elite_models_item');
 	}
 
 	function admin_view($id = null) {
@@ -67,6 +73,7 @@ class EliteModelsController extends AppController {
 			'conditions'	=> array('EliteModel.id' => $id),
 			'contain'		=> array('ModelImage.location')
 		)));
+		$this->set('page_for_layout', 'elite_models_item');
 	}
 
 	function admin_add() {
@@ -85,6 +92,7 @@ class EliteModelsController extends AppController {
 				$this->set('errors', $this->EliteModel->validationErrors);
 			}
 		}
+		$this->set('page_for_layout', 'elite_models_item');
 	}
 
 	function admin_edit($id = null) {
@@ -109,6 +117,7 @@ class EliteModelsController extends AppController {
 			));
 			$this->set('eliteModel', $this->data);
 		}
+		$this->set('page_for_layout', 'elite_models_item');
 	}
 
 	function admin_delete($id = null) {

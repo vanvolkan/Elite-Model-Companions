@@ -26,7 +26,7 @@
 
 		<?php
 			
-			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.11.custom.min', 'siteWideFunctions', 'jquery.prettyPhoto'));
+			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.11.custom.min', 'siteWideFunctions', 'jquery.prettyPhoto', 'disableRClick'));
 			
 			echo $scripts_for_layout;
 		?>
@@ -46,7 +46,7 @@
 				</div>
 			</div>
 			<!-- Begin Menu -->
-			<?php echo $this->element('mainMenu', array('currentPage' => $this->here)); ?>
+			<?php echo $this->element('mainMenu', array('currentPage' => $this->here, 'page_for_layout', @$page_for_layout)); ?>
 			<?php
 				// Display banners for homepage only (when currentRoute returns '/' we're at the homepage)
 				if (Router::currentRoute()->template == '/') {

@@ -1,3 +1,9 @@
+<?php
+	if (empty($eliteModel)):
+		echo '<h2>Model could not be found</h2>';
+		echo '<p>The Elite Model could not be found. Please go back and try selecting another model</p>';
+	else:
+?>
 <h1 class="hReplaced_red"><?php echo $eliteModel['EliteModel']['name']?></h1>
 <?php
 	$class = preg_replace('/\s+/', '_', $eliteModel['EliteModel']['class']);
@@ -75,6 +81,9 @@
 		<div class="bookModelButton">
 			<?php echo $this->Html->link($this->Html->tag('span', 'Book this model'), array('controller' => 'bookings', 'action' => 'book', $eliteModel['EliteModel']['id']), array('class' => 'blackStandardButton', 'escape' => false)); ?>
 		</div>
+		<div class="ratesButton">
+			<?php echo $this->Html->link('View Rates', array('controller' => 'pages', 'action' => 'display', 'rates', 'ratesTable'), array('escape' => false, 'target' => '_blank')); ?>
+		</div>
 	</div>
 	<?php endif; ?>
 	<div class="clear"></div>
@@ -149,3 +158,4 @@
 		});
 	});
 </script>
+<?php endif; ?>

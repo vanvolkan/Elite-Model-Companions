@@ -3,6 +3,7 @@ class EliteModel extends AppModel {
 	var $name = 'EliteModel';
 	var $displayField = 'name';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
+	var $actsAs = array('Sluggable' => array('label' => 'name', 'length' => 150));
 
 	var $hasMany = array(
 		'ModelImage' => array(
@@ -207,13 +208,10 @@ class EliteModel extends AppModel {
 	}
 	*/
 	
-	public function UpdateHits($id)
+	public function UpdateHits($slug)
 	{
-		if (!preg_match('/\d+/', $id))
-			return false;
-		
 		$fieldToInc = 'viewed';
-		$this->updateAll(array('EliteModel.' . $fieldToInc => 'EliteModel.' . $fieldToInc . '+1'), array('EliteModel.id' => $id));
+		$this->updateAll(array('EliteModel.' . $fieldToInc => 'EliteModel.' . $fieldToInc . '+1'), array('EliteModel.slug' => $slug));
 	}
 
 	public function beforeSave()

@@ -101,6 +101,9 @@
 						endif;
 					?>
 					</div>
+					<div class="ratesButton">
+						<?php echo $this->Html->link('View Rates', array('controller' => 'pages', 'action' => 'display', 'rates', 'ratesTable'), array('escape' => false, 'target' => '_blank')); ?>
+					</div>
 				</div>
 			</div>
 		</div>

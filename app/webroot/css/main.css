@@ -208,16 +208,89 @@ div#mainMenu div#mainMenuItems ul li, div#mainMenu div#mainMenuItems ul li a {
 	width: 164px;
 }
 
-div#mainMenuItems ul li.selected.farLeft a {
+/* SELECTED ITEMS */
+div#mainMenuItems ul.home_item li#mainMenu_home {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
+
+div#mainMenuItems ul.home_item li#mainMenu_home.farLeft a {
 	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
 }
 
-div#mainMenuItems ul li.selected.farRight a {
+div#mainMenuItems ul.home_item li#mainMenu_home.farRight a {
 	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
 }
 
-div#mainMenuItems ul li.selected {
+div#mainMenuItems ul.contacts_item li#mainMenu_contacts {
 	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
+
+div#mainMenuItems ul.contacts_item li#mainMenu_contacts.farLeft a {
+	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
+}
+
+div#mainMenuItems ul.contacts_item li#mainMenu_contacts.farRight a {
+	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
+}
+
+div#mainMenuItems ul.elite_models_item li#mainMenu_elite_models {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
+
+div#mainMenuItems ul.elite_models_item li#mainMenu_elite_models.farLeft a {
+	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
+}
+
+div#mainMenuItems ul.elite_models_item li#mainMenu_elite_models.farRight a {
+	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
+}
+
+div#mainMenuItems ul.rates_item li#mainMenu_rates {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
+
+div#mainMenuItems ul.rates_item li#mainMenu_rates.farLeft a {
+	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
+}
+
+div#mainMenuItems ul.rates_item li#mainMenu_rates.farRight a {
+	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
+}
+
+div#mainMenuItems ul.guide_item li#mainMenu_guide {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
+
+div#mainMenuItems ul.guide_item li#mainMenu_guide.farLeft a {
+	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
+}
+
+div#mainMenuItems ul.guide_item li#mainMenu_guide.farRight a {
+	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
+}
+
+div#mainMenuItems ul.employments_item li#mainMenu_employments {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
+
+div#mainMenuItems ul.employments_item li#mainMenu_employments.farLeft a {
+	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
+}
+
+div#mainMenuItems ul.employments_item li#mainMenu_employments.farRight a {
+	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
+}
+
+div#mainMenuItems ul.users_item li#mainMenu_home {
+	background: transparent url(../img/mainMenu_selected_repeat-x.gif) repeat-x 0 0;
+}
+
+div#mainMenuItems ul.users_item li#mainMenu_home.farLeft a {
+	background: transparent url(../img/mainMenu_selected_farLeft_L.gif) no-repeat 0 0;
+}
+
+div#mainMenuItems ul.users_item li#mainMenu_home.farRight a {
+	background: transparent url(../img/mainMenu_selected_farRight_R.gif) no-repeat 100% 0;
 }
 
 div#mainMenu div#mainMenuItems ul li a {
@@ -850,6 +923,11 @@ table.standardTableClass tr th a {
 	border-bottom: 1px dotted #FFF;
 }
 
+table.trcenterAlign th, table.trcenterAlign td {
+	text-align: center;
+	vertical-align: middle;
+}
+
 table.standardTableClass tr th {
 	background-color: #969696;
 	border-bottom: 1px solid #FFF;
@@ -1179,6 +1257,30 @@ div.roundedRates div p {
 	padding-bottom: 20px;
 }
 
+div.ratesButton {
+	margin: 30px auto 5px;
+	padding: 0;
+}
+
+div.ratesButton a {
+	display: block;
+	border: 1px solid #ddd;
+	background: #fff url(../img/assets/notice-icon.gif) no-repeat 94% 50%;
+	padding: 25px 100px 25px 20px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	color: #333;
+	text-decoration: none;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+div.ratesButton a:hover {
+	text-decoration: underline;
+}
+
 /* Guide styles */
 div.standOut {
 	margin: 10px 0;
@@ -1211,27 +1313,10 @@ h3.emphasized {
 	font-size: 17px;
 }
 
-/* DEVELOPMENT SETTINGS - STLYES OF CAKE SQL DUMP */
-.cake-sql-log tr td {
-	background: #fff;
-	padding: 6px;
-	text-align: left;
-	vertical-align: top;
-	border-bottom:1px solid #ddd;
+.emit {
+	font-weight: bold;
 }
 
-.cake-sql-log {
-	background: #f4f4f4;
-	width: 100%;
-}
-.cake-sql-log td {
-	padding: 4px 8px;
-	text-align: left;
-	font-family: Monaco, Consolas, "Courier New", monospaced;
-}
-.cake-sql-log caption {
-	color:#fff;
-}
 .guide{
 	padding: 10px 10px 10px 0; 
 }

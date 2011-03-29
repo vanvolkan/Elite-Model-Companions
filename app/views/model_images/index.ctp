@@ -18,7 +18,7 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $modelImage['ModelImage']['id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($modelImage['EliteModel']['name'], array('controller' => 'elite_models', 'action' => 'view', $modelImage['EliteModel']['id'])); ?>
+			<?php echo $this->Html->link($modelImage['EliteModel']['name'], array('controller' => 'elite_models', 'action' => 'view', $modelImage['EliteModel']['slug'])); ?>
 		</td>
 		<td><?php echo $modelImage['ModelImage']['location']; ?>&nbsp;</td>
 		<td class="actions">

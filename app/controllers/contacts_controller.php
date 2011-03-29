@@ -29,6 +29,8 @@
 					$this->set('errors', $this->Contact->validationErrors);
 				}
 		    }
+		
+			$this->set('page_for_layout', 'contacts_item');
 		}
 		
     }

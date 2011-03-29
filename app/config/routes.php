@@ -30,11 +30,18 @@
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
+	Router::connect('/models', array('controller' => 'elite_models', 'action' => 'index'));
+	Router::connect('/models/*', array('controller' => 'elite_models', 'action' => 'view'));
+	Router::connect('/models/:slug', array('controller' => 'elite_models', 'action' => 'view'), array('slug' => '[-a-z0-9]+', 'pass' => array('slug')));
 	Router::connect('/guide', array('controller' => 'pages', 'action' => 'display', 'guide'));
+	Router::connect('/rates/rates-table', array('controller' => 'pages', 'action' => 'display', 'rates', 'ratesTable'));
 	Router::connect('/rates', array('controller' => 'pages', 'action' => 'display', 'rates'));
 	Router::connect('/bookings/*', array('controller' => 'bookings', 'action' => 'book'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-
+	Router::connect('/employment', array('controller' => 'employments', 'action' => 'index'));
+	Router::connect('/employment/:action/*', array('controller' => 'employments'));
+	Router::connect('/contact', array('controller' => 'contacts', 'action' => 'index'));
+	Router::connect('/contact/:action/*', array('controller' => 'contacts'));
 	Router::connect('/admin/:controller/:action/*', array(
 	    'action' => null, 'prefix' => 'admin', 'admin' => true
 	));

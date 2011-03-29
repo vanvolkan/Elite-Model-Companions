@@ -56,6 +56,7 @@
 					$this->set('errors', $this->Employment->validationErrors);
 				}
 			}
+			$this->set('page_for_layout', 'employments_item');
 		}
 		
 		public function admin_index()

@@ -21,8 +21,8 @@
 				echo (++$i % 4 == 0 ? '<li class="farRight">' : '<li>');
 				$class = preg_replace('/\s+/', '_', $model['EliteModel']['class']);
 				$class = $class != "" ? 'eliteModel_' . $class : '';
-				echo $this->Html->link($this->Html->image($thumbnail['src'], array('width' => $thumbnail['w'], 'height' => $thumbnail['h'])) . '<span class="' . $class . 'tag"></span>', array('controller' => 'elite_models', 'action' => 'view', $model['EliteModel']['id']), array('escape' => false, 'class' => $class));
-				$divContent = $this->Html->link($model['EliteModel']['name'] . $this->Html->tag('span', '&#36;' . $model['EliteModel']['cost'] . '&nbsp;per hour'), array('controller' => 'elite_models', 'action' => 'view', $model['EliteModel']['id']), array('escape' => false));
+				echo $this->Html->link($this->Html->image($thumbnail['src'], array('width' => $thumbnail['w'], 'height' => $thumbnail['h'])) . '<span class="' . $class . 'tag"></span>', array('controller' => 'elite_models', 'action' => 'view', $model['EliteModel']['slug']), array('escape' => false, 'class' => $class));
+				$divContent = $this->Html->link($model['EliteModel']['name'] . $this->Html->tag('span', '&#36;' . $model['EliteModel']['cost'] . '&nbsp;per hour'), array('controller' => 'elite_models', 'action' => 'view', $model['EliteModel']['slug']), array('escape' => false));
 				echo $this->Html->div('modelDetailsBox', $divContent);
 				echo '</li>';
 			endforeach; 
