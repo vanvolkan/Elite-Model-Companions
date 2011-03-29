@@ -12,7 +12,7 @@ class EliteModelsController extends AppController {
 				'order'			=> 'RAND()',
 				'conditions'	=> array('EliteModel.is_featured' => 1),
 				'contain'		=> array('ModelImage.location'),
-				'fields'		=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description', 'EliteModel.id')
+				'fields'		=> array('EliteModel.name', 'EliteModel.age', 'EliteModel.description', 'EliteModel.id', 'EliteModel.slug')
 			))) {
 				$featuredModel = $this->EliteModel->find('first', array(
 					'order'		=> 'RAND()',
@@ -24,6 +24,7 @@ class EliteModelsController extends AppController {
 			return $featuredModel;
 		} else
 			$this->set('elite_models', $this->EliteModel->find('all', array(
+				'fields'		=> array('EliteModel.id', 'EliteModel.name', 'EliteModel.cost', 'EliteModel.class', 'EliteModel.is_featured', 'EliteModel.rank', 'EliteModel.slug'),
 				'contain'		=> array('ModelImage.location'),
 				'order'			=> array('EliteModel.rank' => 'asc', 'EliteModel.id' => 'desc')
 			)));

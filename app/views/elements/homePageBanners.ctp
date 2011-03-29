@@ -19,11 +19,13 @@
 							<?php endforeach; ?>
 						</div>
 					</div>
+					<?php if ($numBanners > 1): ?>
 					<div class="paging">
 						<?php for ($i = 1; $i <= $numBanners; $i++): ?>
 							<a href="#" rel="<?php echo $i; ?>"><?php echo $i; ?></a>
 						<?php endfor; ?>
 					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
