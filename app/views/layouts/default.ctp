@@ -31,9 +31,6 @@
 			echo $scripts_for_layout;
 		?>
 		
-		<!--[if lte IE 6]>
-			<?php echo $this->Html->script('supersleight-min'); ?>
-		<![endif]-->
 	</head>
 	<body>
 		<div id="wrapper">

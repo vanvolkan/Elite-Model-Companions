@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+	$(document).pngFix();
 	$('table.standardTableClass tr td').hover(function() {
 		if (!$(this).parent().hasClass('hoverRow'))
 			$(this).parent().addClass('hoverRow');

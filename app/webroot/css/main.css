@@ -1076,6 +1076,7 @@ div#zoomOverlay {
 
 div#zoomOverlay span {
 	display: block;
+	cursor: pointer; /* IE */
 	width: 100%;
 	height: 100%;
 	text-indent: -9999em;
