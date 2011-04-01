@@ -314,12 +314,12 @@ div#mainBody {
 
 div#mainBody div.content {
 	background: #090909 url(../img/contentMainBottomRounded.gif) no-repeat 0 100%;
-	padding: 0 0 16px;
+	padding: 0 0 5px;
 }
 
 div#mainBody div.roundedBottomMain {
 	background: #ededed url(../img/mainBody_BG-repeat-x.jpg) repeat-x 0 0;
-	
+	padding-bottom: 11px;
 }
 
 div.padded {
@@ -898,6 +898,10 @@ div.bookModelButton a {
 	margin: 0 auto;
 	float: none;
 	text-align: center;
+}
+
+div.bookModelButton a, div.bookModelButton a span {
+	cursor: pointer; /* IE */
 }
 
 /* Table classes */
