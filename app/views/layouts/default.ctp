@@ -31,6 +31,9 @@
 			echo $scripts_for_layout;
 		?>
 		
+		<!--[if lte IE 6]>
+			<?php echo $this->Html->css(array('ie6')); ?>
+		<![endif]-->
 	</head>
 	<body>
 		<div id="wrapper">
