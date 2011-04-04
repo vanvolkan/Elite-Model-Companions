@@ -29,7 +29,10 @@ class EliteModelsController extends AppController {
 				'order'			=> array('EliteModel.rank' => 'asc', 'EliteModel.id' => 'desc')
 			)));
 		
+		$metaDescription = "All our photo’s and model’s ages are 100% genuine, so the companion you choose is the model that will arrive. We interview all our escorts and can verify that all girls have been carefully selected for their unique style, beauty, elegance and charismatic personality.";
+		$metaKeywords = array('dicerning', 'level service', 'exceeding expectations', 'competency', 'discretion', 'reliability', 'highest standards', 'photos', 'models', 'ages', '100% genuine', 'unique', 'beauty', 'elegance', 'charismatic', 'personality', 'girl next door', 'catwalk', 'bikini', 'promo', 'actresses', 'university students', 'beauty pagents', 'publications', 'penthouse', 'FHM', 'Ralph', 'zoo', 'picture', 'calanders', 'the very best', 'genuine girlfriend experience', 'fun party booking', 'excellent', 'couples', 'real lesbian doubles', 'slim', 'shapely', 'intellectual', 'welcoming', 'attractive', 'well-known magazine model', 'stunning', 'feminine', 'curvaceous', 'fantasy experience', 'sensuality', 'bi-sexual', 'natural', 'toned', 'passion', 'intimacy', 'fetish', 'naughty', 'raunchy', 'kinky', 'musty', 'tall', 'GFE', 'gorgeous', 'Asian', 'glamour', 'slender', 'athletic', 'voluptuous', 'well educated', 'presentable');
 		$this->set('page_for_layout', 'elite_models_item');
+		$this->set(compact('metaDescription', 'metaKeywords'));
 	}
 	 
 	function view($slug = null) {        
@@ -44,7 +47,11 @@ class EliteModelsController extends AppController {
 			'contain'		=> array('ModelImage.location')
 		));
 		
-		$this->set(compact('page_for_layout', 'eliteModel'));
+		$metaDescription = "All our photo’s and model’s ages are 100% genuine, so the companion you choose is the model that will arrive. We interview all our escorts and can verify that all girls have been carefully selected for their unique style, beauty, elegance and charismatic personality.";
+		$metaKeywords = array('dicerning', 'level service', 'exceeding expectations', 'competency', 'discretion', 'reliability', 'highest standards', 'photos', 'models', 'ages', '100% genuine', 'unique', 'beauty', 'elegance', 'charismatic', 'personality', 'girl next door', 'catwalk', 'bikini', 'promo', 'actresses', 'university students', 'beauty pagents', 'publications', 'penthouse', 'FHM', 'Ralph', 'zoo', 'picture', 'calanders', 'the very best', 'genuine girlfriend experience', 'fun party booking', 'excellent', 'couples', 'real lesbian doubles', 'slim', 'shapely', 'intellectual', 'welcoming', 'attractive', 'well-known magazine model', 'stunning', 'feminine', 'curvaceous', 'fantasy experience', 'sensuality', 'bi-sexual', 'natural', 'toned', 'passion', 'intimacy', 'fetish', 'naughty', 'raunchy', 'kinky', 'musty', 'tall', 'GFE', 'gorgeous', 'Asian', 'glamour', 'slender', 'athletic', 'voluptuous', 'well educated', 'presentable');
+		
+		$this->set('page_for_layout', 'elite_models_item');
+		$this->set(compact('metaDescription', 'metaKeywords'));
 	}
 
 	function admin_index() {

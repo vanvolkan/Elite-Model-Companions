@@ -29,8 +29,10 @@
 					$this->set('errors', $this->Contact->validationErrors);
 				}
 		    }
-		
+			$metaDescription = "Please submit emails to Elite Model Companions by completing the form below. All communications will be kept strictly confidential and private. Alternatively you can send an email to info@elitemodelcompanions.com.au";
+			$metaKeywords = array('Elite Model Companions', 'Contact Elite Model Companions', 'Email Elite Model Companions');
 			$this->set('page_for_layout', 'contacts_item');
+			$this->set(compact('metaDescription', 'metaKeywords'));
 		}
 		
     }

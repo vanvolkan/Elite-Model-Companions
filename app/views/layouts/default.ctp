@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html> 
 	<head>
 		<?php echo $this->Html->charset(); ?>
@@ -6,12 +6,13 @@
 		<?php
 			echo $this->Html->meta(
 				'description',
-				'Enter description here'
+				@$metaDescription
 			);
 			
+			$keywords = (is_array(@$metaKeywords)) ? join(', ', $metaKeywords) : '';
 			echo $this->Html->meta(
 				'keywords',
-				'Companions, More Here, Blah'
+				$keywords
 			);			
 			
 			echo $this->Html->meta('icon');
@@ -26,7 +27,7 @@
 
 		<?php
 			
-			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.11.custom.min', 'siteWideFunctions', 'jquery.prettyPhoto'));
+			echo $this->Html->script(array('jquery-1.5.min', 'sifr', 'sifr-config', 'jquery-ui-1.8.11.custom.min', 'jquery.pngFix', 'siteWideFunctions', 'jquery.prettyPhoto'));
 			
 			echo $scripts_for_layout;
 		?>

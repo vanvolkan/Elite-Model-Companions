@@ -56,7 +56,10 @@
 					$this->set('errors', $this->Employment->validationErrors);
 				}
 			}
+			$metaDescription = "Attractive staffs between the ages of 18-30, of all nationalities are required for high class escort work in Newcastle, Central Coast and Sydney areas. We are a leading escort agency and have some of the highest rates in the industry, hence the opportunity exists to earn a very high income in a discrete, luxurious and executive environment.";
+			$metaKeywords = array('attractive staffs', 'all nationalities', 'earn high income', 'luxurious', 'executive', 'unbelievable money', 'national', 'international travel', 'confidentiality', 'attractive', 'polite', 'sexually passionate');
 			$this->set('page_for_layout', 'employments_item');
+			$this->set(compact('metaDescription', 'metaKeywords'));
 		}
 		
 		public function admin_index()

@@ -71,8 +71,26 @@ class PagesController extends AppController {
 		if (!empty($path[$count - 1])) {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
+		
+		$metaDescription = '';
+		$metaKeywords = array();
+		
+		switch ($page) {
+			case 'home':
+				$metaDescription = "At Elite Model Companions we endeavor to offer some of the most naturally beautiful, classy and sophisticated women available, catering to clientele of style, sophistication, class and importance. We guarantee that you will always receive our full attention to your requests and we will always strive to make your date both perfect and memorable";
+ 				$metaKeywords = array('Elite Model Companions', 'high class', 'Newcastle', 'central coast', 'Sydney', 'escort', 'agency', 'naturally', 'beautiful', 'classy', 'sophisticated', 'clientele', 'style', 'sophistication', 'class', 'importance', 'full attention', 'perfect', 'memorable', 'date');
+			break;
+			case 'guide':
+				$metaDescription = "Before making an enquiry with us...Check the model's details on the website and be sure you are aware of her rates. Do not call or e-mail unless you are genuinely interested. Be respectful and friendly towards the booking co-coordinators, and bear in mind that this is a business transaction.";
+				$metaKeywords = array('rates', 'Cleanliness', 'Money', 'Models', 'courteous');
+			break;
+			case 'rates':
+				$metaDescription = "The determination of models rates takes into consideration various factors, including natural beauty, fitness, education, erotic technique, life experience, elegance, sophistication, charisma and much more! Discounts apply to extended bookings of more than two hours and group bookings.";
+				$metaKeywords = array('fitness', 'erotic technique', 'charisma', 'high standard', 'affordable price', 'courtesans', 'professional', 'successful', 'celebrity', 'penthouse pets', 'playboy bunnies', 'porn stars');
+			break;
+		}
 		$page_for_layout = $page . '_item';
-		$this->set(compact('page', 'subpage', 'title_for_layout', 'page_for_layout'));
+		$this->set(compact('page', 'subpage', 'title_for_layout', 'page_for_layout', 'metaDescription', 'metaKeywords'));
 		$this->render(implode('/', $path));
 	}
 }

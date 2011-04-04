@@ -63,5 +63,9 @@
 			$this->set('elite_models', $this->Booking->EliteModel->find('list', array(
 				'fields'	=> array('EliteModel.id', 'EliteModel.name')
 			)));
+			
+			$metaDescription = "Make an online Booking for one of our Elite Model Companions. All bookings are private and confidential";
+			$metaKeywords = array('Book Elite Model', 'Book escort', 'Booking escort', 'Book escort agency', 'Book escort Newcastle', 'Book escort Sydney');
+			$this->set(compact('metaDescription', 'metaKeywords'));
 		}
 	}
