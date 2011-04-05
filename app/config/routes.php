@@ -47,3 +47,11 @@
 	));
 	
 	Router::connect('/admin', array('controller' => 'users', 'action' => 'index', 'admin' => true));
+	
+	Router::connect('/sitemap', array('controller' => 'sitemaps', 'action' => 'index')); 
+	Router::connect('/sitemap/:action/*', array('controller' => 'sitemaps')); 
+
+	// Optional
+	Router::connect('/robots/:action/*', array('controller' => 'sitemaps', 'action' => 'robot'));
+
+	Router::parseExtensions();

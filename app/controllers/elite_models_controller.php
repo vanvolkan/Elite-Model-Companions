@@ -51,7 +51,7 @@ class EliteModelsController extends AppController {
 		$metaKeywords = array('dicerning', 'level service', 'exceeding expectations', 'competency', 'discretion', 'reliability', 'highest standards', 'photos', 'models', 'ages', '100% genuine', 'unique', 'beauty', 'elegance', 'charismatic', 'personality', 'girl next door', 'catwalk', 'bikini', 'promo', 'actresses', 'university students', 'beauty pagents', 'publications', 'penthouse', 'FHM', 'Ralph', 'zoo', 'picture', 'calanders', 'the very best', 'genuine girlfriend experience', 'fun party booking', 'excellent', 'couples', 'real lesbian doubles', 'slim', 'shapely', 'intellectual', 'welcoming', 'attractive', 'well-known magazine model', 'stunning', 'feminine', 'curvaceous', 'fantasy experience', 'sensuality', 'bi-sexual', 'natural', 'toned', 'passion', 'intimacy', 'fetish', 'naughty', 'raunchy', 'kinky', 'musty', 'tall', 'GFE', 'gorgeous', 'Asian', 'glamour', 'slender', 'athletic', 'voluptuous', 'well educated', 'presentable');
 		
 		$this->set('page_for_layout', 'elite_models_item');
-		$this->set(compact('metaDescription', 'metaKeywords'));
+		$this->set(compact('eliteModel', 'metaDescription', 'metaKeywords'));
 	}
 
 	function admin_index() {

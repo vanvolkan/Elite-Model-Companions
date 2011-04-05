@@ -3,8 +3,3 @@
    RewriteRule    ^$ app/webroot/    [L]
    RewriteRule    (.*) app/webroot/$1 [L]
 </IfModule>
-
-#AuthType Basic
-#AuthName "Protected Area - Thank you please"
-#AuthUserFile /home/elitemod/public_html/.htpasswd
-#Require valid-user
