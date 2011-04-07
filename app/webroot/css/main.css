@@ -1318,6 +1318,15 @@ h3.emphasized {
 	font-size: 17px;
 }
 
+div.footerSpiel {
+	margin: 0 0 15px;
+}
+
+div.footerSpiel p {
+	font-size: 1em;
+	color: #7c7c7c;
+}
+
 .emit {
 	font-weight: bold;
 }

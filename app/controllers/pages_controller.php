@@ -78,7 +78,7 @@ class PagesController extends AppController {
 		switch ($page) {
 			case 'home':
 				$metaDescription = "At Elite Model Companions we endeavor to offer some of the most naturally beautiful, classy and sophisticated women available, catering to clientele of style, sophistication, class and importance. We guarantee that you will always receive our full attention to your requests and we will always strive to make your date both perfect and memorable";
- 				$metaKeywords = array('Elite Model Companions', 'high class', 'Newcastle', 'central coast', 'Sydney', 'escort', 'agency', 'naturally', 'beautiful', 'classy', 'sophisticated', 'clientele', 'style', 'sophistication', 'class', 'importance', 'full attention', 'perfect', 'memorable', 'date');
+ 				$metaKeywords = array('Elite Model Companions', 'high class', 'Newcastle', 'central coast', 'Sydney escorts', 'agency', 'naturally', 'beautiful', 'classy', 'sophisticated', 'clientele', 'style', 'sophistication', 'class', 'importance', 'full attention', 'perfect', 'memorable', 'date');
 			break;
 			case 'guide':
 				$metaDescription = "Before making an enquiry with us...Check the model's details on the website and be sure you are aware of her rates. Do not call or e-mail unless you are genuinely interested. Be respectful and friendly towards the booking co-coordinators, and bear in mind that this is a business transaction.";

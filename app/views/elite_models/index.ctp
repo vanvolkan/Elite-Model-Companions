@@ -1,6 +1,6 @@
 <h1 class="hReplaced_red">Models</h1>
 
-<p class="note">Models are available strictly by appointment only<br/><em>Our models faces have been blurred in respect of their discretion</em></p>
+<p class="note">Models are available strictly by appointment only<br/><em>To avoid disappointment, bookings in advance are highly recommended.</em></p>
 
 <div id="elite_models_index">
 	<ul class="elite_models_list">
